@@ -3,123 +3,377 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
   <title>Daily Brief — 2026-10-08</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
   <style>
-    :root { color-scheme: light; }
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-family: var(--sans);
+      font-size: 17px;
       line-height: 1.55;
-      color: #111;
-      background: #f6f4ef;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 20px 16px 64px; }
-    header {
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid #ddd;
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
     }
-    header a { color: #0b57d0; text-decoration: none; }
-    header h1 { margin: 8px 0 4px; font-size: 1.6rem; }
-    header p { margin: 0; color: #555; }
-    article a { color: #0b57d0; }
-    .meta { color: #666; font-size: 0.95rem; margin: 12px 0 24px; }
-    .archive { margin-top: 40px; }
-    .archive ul { padding-left: 1.2rem; }
-    .archive li { margin: 0.35rem 0; }
-    footer { margin-top: 48px; color: #777; font-size: 0.85rem; }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <a href="./">Daily Brief</a>
-      <h1>Daily Brief</h1>
-      <p>Latest edition · 2026-10-08</p>
+    <header class="masthead">
+      <a class="brand" href="./">Daily Brief</a>
+      <div class="rail">
+        <span>Thursday, October 8, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      <p class="dek">Tech, AI, markets, world — plus three For You moves.</p>
     </header>
-    <p class="meta"><a href="archive/daily_brief_2026-10-08.txt">Download audio script (.txt)</a> · <a href="archive/">Archive</a></p><article>
+    <nav class="toolbar" aria-label="Edition links"><a href="archive/daily_brief_2026-10-08.txt">Audio script (.txt)</a><a href="archive/">Archive</a></nav>
+    <article>
 
 <h1>Daily Brief — Thursday, October 8, 2026</h1>
 
-<p>A quiet news cycle hides some genuinely consequential stories this morning. From a major fashion-brand hack to GLP-1 rebound science, here is what actually matters today.</p>
-
-<hr>
+<p>Markets keep shrugging off bad news while yields creep higher, AI agents are jumping from your screen onto your finger, and human-rights watchdogs are raising loud alarms at the US border. Here is everything worth knowing before your first coffee kicks in.</p>
 
 <h2>The News</h2>
 
 <h3>Tech &amp; Deals</h3>
-
 <ul>
-  <li><a href="https://techcrunch.com/2026/10/08/asos-confirms-breach-of-customer-data-after-hackers-send-rogue-app-notification/"><strong>Asos confirms customer data breach after rogue push notification</strong></a> — Hackers boasted they had "fully compromised" Asos's cloud storage by blasting the alert directly to shoppers. If you have the Asos app, assume your data is in play and change passwords now.</li>
-  <li><a href="https://techcrunch.com/2026/10/08/waymo-locks-in-5b-loan-from-blackstone-pimco-to-fuel-robotaxi-expansion/"><strong>Waymo locks in $5B loan from Blackstone and PIMCO</strong></a> — First-ever debt financing for the Alphabet unit signals it is moving from venture-backed experiment to capital-markets-grade infrastructure play.</li>
-  <li><a href="https://techcrunch.com/2026/10/08/spotify-is-getting-more-serious-about-selling-enterprise-software/"><strong>Spotify launches technology.spotify.com to sell its internal tech</strong></a> — The streaming giant is quietly becoming a B2B software vendor, opening its proprietary tooling to outside companies.</li>
-  <li><a href="https://techcrunch.com/2026/10/08/cal-ais-19-year-old-founder-just-raised-10m-for-his-new-ai-startup/"><strong>Cal AI's teen founder raises $10M for personal AI agent startup</strong></a> — Zach Yadegari, 19, is going after the wearable life-logging space with a new product competing against Instinct, Muse, and Bee.</li>
-  <li><a href="https://techcrunch.com/2026/10/08/google-releases-a-new-local-first-granola-competitor/"><strong>Google releases offline AI meeting note-taker to rival Granola</strong></a> — The new Edge Foresight app transcribes, summarises, and answers questions entirely on-device — no cloud required. Privacy-first crowd, take note.</li>
+  <li>
+    <strong><a href="https://techcrunch.com/2026/10/08/naturas-smart-ring-puts-ai-agents-on-your-finger/">Natura's $99 smart ring puts AI agents on your finger</a></strong> — The Interface ring lets you summon AI agents with one press, capture notes, and control devices while doubling as a health tracker. At $99 it is the first genuinely cheap agentic wearable.
+  </li>
+  <li>
+    <strong><a href="https://techcrunch.com/2026/10/08/goodfire-says-its-new-inside-out-monitors-catch-rogue-ai-agents-at-a-fraction-of-the-cost/">Goodfire's "inside-out" monitors catch rogue AI agents cheap</a></strong> — Instead of running a second AI to referee the first, Goodfire's monitors peek inside the model in real time and only escalate when something looks off. Promises big cost savings for enterprise AI safety teams.
+  </li>
 </ul>
 
 <h3>Artificial Intelligence</h3>
-
 <ul>
-  <li><strong>No major stand-alone AI headlines in the last 24 hours</strong> — but several of today's tech stories — Waymo's expansion, the Cal AI raise, and Google's on-device transcription push — are squarely AI-infrastructure stories in disguise. Watch Waymo's debt-financing model; expect competitors to copy it fast.</li>
+  <li>
+    <strong><a href="https://www.cnbc.com/2026/10/08/google-cloud-introduces-gemini-agent-for-work-as-ai-race-heats-up.html">Google Cloud launches Gemini work agent</a></strong> — Google's new agent chats, writes code, runs tasks, and lives inside the Google Workspace ecosystem. It is a direct shot at Microsoft Copilot and Salesforce Agentforce — the enterprise AI land-grab is in full swing.
+  </li>
+  <li>
+    <strong><a href="https://techcrunch.com/2026/10/08/goodfire-says-its-new-inside-out-monitors-catch-rogue-ai-agents-at-a-fraction-of-the-cost/">Goodfire's inside-out safety approach</a></strong> — Mechanistic interpretability moves from research curiosity to commercial product. If it works at scale, the "oversight tax" on agentic AI drops dramatically.
+  </li>
 </ul>
 
 <h3>Markets</h3>
-
 <ul>
-  <li><strong>Sources quiet on fresh market moves this morning.</strong> Carry-over context: Treasury yields remain elevated after Fed's Waller signalled more hikes are possible, and oil held gains near recent highs on Iran-tanker tensions. Watch the 30-year auction result for direction on long-duration bonds today.</li>
+  <li>
+    <strong><a href="https://www.cnbc.com/2026/10/08/rising-yields-and-oil-are-taking-a-toll-on-stocks-but-wall-street-finds-ways-to-mute-the-alarm.html">Stocks hit ATH despite rising yields and oil — Wall Street mutes the alarm</a></strong> — The S&amp;P 500 touched a fresh all-time high Tuesday even as 10-year Treasury yields keep climbing and crude oil remains elevated near multi-month highs. Analysts credit narrow leadership in mega-cap AI names for propping up the index.
+  </li>
 </ul>
+<p><em>Key tension:</em> bond traders and equity traders are telling very different stories right now. Watch which one blinks first.</p>
 
 <h3>World</h3>
-
 <ul>
-  <li><a href="https://techcrunch.com/2026/10/08/india-rejects-elon-musks-claim-of-discrimination-over-starlink-launch/"><strong>India rejects Musk's "Ambani runs India" claims over Starlink stall</strong></a> — The Indian government pushed back after Musk publicly questioned whether billionaire Mukesh Ambani was blocking Starlink's entry. Geopolitics, spectrum policy, and one of the world's biggest consumer markets are all in the mix.</li>
-  <li><a href="https://techcrunch.com/2026/10/08/new-york-alleges-tiktok-gave-teens-children-a-placebo-safety-feature-instead-of-a-real-one/"><strong>New York: TikTok's child safety feature was effectively fake</strong></a> — One of 24-plus state lawsuits alleges TikTok knowingly deployed a cosmetic safeguard that did nothing to reduce addictive use among minors. Regulatory heat on the platform is intensifying.</li>
+  <li>
+    <strong><a href="https://www.bbc.co.uk/news/articles/c9p8gn55433jo?at_medium=RSS&at_campaign=rss">HRW: US deportations to African countries unlawful</a></strong> — Human Rights Watch says more than 500 migrants have been expelled from the US to African nations in flights that allegedly bypass due process protections. The report lands as immigration enforcement remains a flash-point in US domestic politics.
+  </li>
 </ul>
 
 <hr>
 
 <h2>For You</h2>
 
-<h3>Peptides &amp; Health — GLP-1 Rebound: What the Pilot Data Says</h3>
-
-<p>A new pilot randomised controlled trial in <em>Obesity Science &amp; Practice</em> tackled one of the biggest open questions in GLP-1 pharmacology: <strong>what stops the weight coming back after you stop the drug?</strong></p>
-
-<ul>
-  <li>Researchers tested structured behavioural and dietary interventions bridging the discontinuation window.</li>
-  <li>Early results suggest that <strong>timed support — not just stopping cold — meaningfully reduces rebound weight gain</strong>.</li>
-  <li>The trial is small (pilot-scale), so treat the effect sizes with caution.</li>
-</ul>
-
-<p><a href="https://pubmed.ncbi.nlm.nih.gov/42846130/">Read the abstract on PubMed</a>. <em>Not medical advice. Talk to your prescribing clinician before changing any GLP-1 protocol.</em></p>
+<h3>Peptides &amp; Health</h3>
+<p><strong>GLP-1 rebound — what a new trial says about keeping weight off after you stop.</strong></p>
+<p>A pilot randomised controlled trial published recently on preventing weight regain after GLP-1 therapy discontinuation found that structured lifestyle intervention — combined with a defined tapering protocol — significantly slowed rebound weight gain compared with cold-stop discontinuation. The plain-language takeaway: stopping a GLP-1 drug abruptly appears to be the worst strategy; a gradual taper paired with calorie awareness and resistance training gave participants the best shot at holding their results.</p>
+<p><em>Not medical advice. Talk to your prescriber before changing any GLP-1 dosing.</em></p>
 
 <h3>AI — Your Move Today</h3>
-
-<p><strong>Download Google's Edge Foresight app</strong> and record your next internal meeting or call entirely on-device. Compare the transcript quality and summary against whatever cloud-based tool you currently use. On-device AI is maturing fast — today is a good day to benchmark it yourself rather than wait for someone else's review.</p>
+<p><strong>Set up a Gemini work agent trial in Google Workspace.</strong></p>
+<p>Google Cloud's new Gemini agent is rolling out to enterprise accounts now. If your organisation runs Google Workspace, open the Admin Console today, navigate to <em>Apps &gt; Google Workspace &gt; Gemini</em>, and enable the agent for a small pilot group. Give it one repeatable task — weekly report drafting or meeting-notes summarisation — and measure time saved over two weeks before rolling out wider.</p>
 
 <h3>Investing — Where to Look</h3>
-
 <ul>
-  <li><strong>Infrastructure debt as a model:</strong> Waymo just proved that robotaxi businesses can tap institutional debt markets at scale. Watch whether Cruise, Zoox, or Pony.ai follow suit — debt-financed expansion changes the competitive timeline dramatically.</li>
-  <li><strong>Enterprise SaaS pivots:</strong> Spotify openly monetising its internal technology is part of a broader pattern — mature consumer platforms seeking higher-margin B2B revenue. Look for similar moves from other platform companies with proprietary tooling.</li>
+  <li><strong>Agentic hardware:</strong> Natura's $99 smart ring is the opening price shot in what could be a busy wearable-AI category. Watch for comparable launches from established wearable makers; the component supply chain — specifically low-power edge-inference chips — is worth tracking.</li>
+  <li><strong>AI safety tooling:</strong> Goodfire's commercial pivot signals that enterprises will soon budget explicitly for model-monitoring. Early-stage safety infrastructure is a nascent but growing line item in AI budgets.</li>
 </ul>
-
-<p><em>Not financial advice. All investments carry risk; do your own research.</em></p>
+<p><em>Rising Treasury yields remain the single biggest macro risk to high-multiple tech valuations — do not ignore the bond market's warning. Not financial advice.</em></p>
 
 <hr>
 
-<p>That is your October 8 brief. Stay sharp, and we will be back tomorrow morning.</p>
+<p>That is your Thursday morning picture. Yields are the thread pulling everything else — keep one eye on the 30-year auction results and the other on wherever Gemini agents land in your inbox. See you tomorrow.</p>
 
 </article><section class="archive"><h2>Recent</h2><ul>
-<li><a href="archive/daily_brief_2026-10-08.html">2026-10-08</a></li>
-<li><a href="archive/daily_brief_2026-10-07.html">2026-10-07</a></li>
-<li><a href="archive/daily_brief_2026-10-06.html">2026-10-06</a></li>
-<li><a href="archive/daily_brief_2026-10-05.html">2026-10-05</a></li>
-<li><a href="archive/daily_brief_2026-10-04.html">2026-10-04</a></li>
-<li><a href="archive/daily_brief_2026-10-02.html">2026-10-02</a></li>
-<li><a href="archive/daily_brief_2026-09-25.html">2026-09-25</a></li>
-<li><a href="archive/daily_brief_2026-09-18.html">2026-09-18</a></li>
+<li><a href="archive/daily_brief_2026-10-08.html">Thursday, October 8, 2026</a></li>
+<li><a href="archive/daily_brief_2026-10-07.html">Wednesday, October 7, 2026</a></li>
+<li><a href="archive/daily_brief_2026-10-06.html">Tuesday, October 6, 2026</a></li>
+<li><a href="archive/daily_brief_2026-10-05.html">Monday, October 5, 2026</a></li>
+<li><a href="archive/daily_brief_2026-10-04.html">Sunday, October 4, 2026</a></li>
+<li><a href="archive/daily_brief_2026-10-02.html">Friday, October 2, 2026</a></li>
+<li><a href="archive/daily_brief_2026-09-25.html">Friday, September 25, 2026</a></li>
+<li><a href="archive/daily_brief_2026-09-18.html">Friday, September 18, 2026</a></li>
 </ul></section>
-    <footer>Published automatically. Open on any phone — no app needed.</footer>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
   </div>
 </body>
 </html>

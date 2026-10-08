@@ -3,41 +3,300 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
   <title>Daily Brief — 2026-10-02</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
   <style>
-    :root { color-scheme: light; }
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-family: var(--sans);
+      font-size: 17px;
       line-height: 1.55;
-      color: #111;
-      background: #f6f4ef;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 20px 16px 64px; }
-    header {
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid #ddd;
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
     }
-    header a { color: #0b57d0; text-decoration: none; }
-    header h1 { margin: 8px 0 4px; font-size: 1.6rem; }
-    header p { margin: 0; color: #555; }
-    article a { color: #0b57d0; }
-    .meta { color: #666; font-size: 0.95rem; margin: 12px 0 24px; }
-    .archive { margin-top: 40px; }
-    .archive ul { padding-left: 1.2rem; }
-    .archive li { margin: 0.35rem 0; }
-    footer { margin-top: 48px; color: #777; font-size: 0.85rem; }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <a href="../">Daily Brief</a>
-      <h1>Daily Brief — 2026-10-02</h1>
-      <p>Morning news + For You</p>
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Friday, October 2, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
     </header>
-    <p class="meta"><a href="daily_brief_2026-10-02.txt">Download audio script (.txt)</a> for Eleven Reader</p><article>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-02.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
 
 <h1>Daily Brief — Friday, October 2, 2026</h1>
 
@@ -105,8 +364,8 @@
 
 <p><em>That is your Friday brief. The jobs number hits this morning — keep one eye on the tape. Have a sharp weekend.</em></p>
 
-</article><p class="meta"><a href="../">← Latest brief</a></p>
-    <footer>Published automatically. Open on any phone — no app needed.</footer>
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
   </div>
 </body>
 </html>
