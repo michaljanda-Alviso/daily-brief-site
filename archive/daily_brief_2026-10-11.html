@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-11</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Sunday, October 11, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-11.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Sunday, October 11, 2026</h1>
+
+<p>A weekend of sharp warnings: from Satya Nadella calling for an AI "emergency brake" to Russian bombs over Zaporizhzhia. Here's what you need to know before the week begins.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/10/cloudflare-acquires-deno-to-improve-its-workers-programming-model/"><strong>Cloudflare acquires Deno</strong></a> — The runtime behind Deno Deploy joins Cloudflare's Workers platform, a significant consolidation in the edge computing space.</li>
+  <li><a href="https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/"><strong>Apple quietly acqui-hires podcast AI startup Huxe</strong></a> — Apple licensed Huxe's personalization tech and took on the team — a signal it wants in on AI-generated audio content.</li>
+  <li><a href="https://techcrunch.com/2026/10/10/petra-power-looks-to-modernize-energy-for-data-centers-and-defense-vehicles/"><strong>Petra Power targets data centers with fuel cells</strong></a> — As the electricity crunch bites, Petra is pitching highly efficient fuel cells as a credible alternative for both tech and defense customers.</li>
+  <li><a href="https://techcrunch.com/2026/10/09/elon-musk-intensifies-attack-on-ambani-over-starlink-india-launch-delay/"><strong>Musk escalates Starlink-India row, targeting Ambani</strong></a> — Musk accused Mukesh Ambani of using political connections to block Starlink's Indian launch; regulatory approval remains stalled.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/"><strong>Nadella: AI models need a human-controlled 'emergency brake'</strong></a> — In a sweeping Saturday post, Microsoft's CEO said the industry must redesign the "trust architecture" of AI and stop treating models as black boxes we simply obey.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised"><strong>Nadella goes further: assume every AI model is 'compromised'</strong></a> — The Verge's framing sharpens the point — Nadella is calling for zero-trust principles to be applied to AI outputs, not just networks.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1009051/privacy-ai-agent-promises-openai-meta-muse-dots"><strong>AI agent makers promise privacy — analysts are sceptical</strong></a> — At OpenAI DevDay, Sam Altman unveiled agent <em>Dots</em> with big privacy pledges; the piece unpacks how those promises hold up against Meta's rival Muse.</li>
+  <li><a href="https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit"><strong>DistroKid quietly pulls songs after UMG's 'AI-slop' lawsuit</strong></a> — Artists found their tracks removed without notice; DistroKid confirmed the takedowns are a direct response to Universal Music Group's legal action.</li>
+  <li><a href="https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/"><strong>The best AI agents living inside your texts, ranked</strong></a> — TechCrunch maps the growing field of SMS-native agents, from family assistants to work bots — useful if you're evaluating which to adopt.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><a href="https://www.cnbc.com/2026/10/10/jpmorgan-sees-once-in-a-generation-opportunity-in-fixed-income-space.html"><strong>JPMorgan: fixed income is a 'once in a generation' buy</strong></a> — Portfolio manager Priya Misra is moving into credit risk in high-quality companies, arguing current yields won't last.</li>
+  <li><a href="https://www.cnbc.com/2026/10/10/supreme-court-case-401k-private-funds-intel.html"><strong>Supreme Court weighs landmark 401(k) private-funds case</strong></a> — The Intel case could reshape how employers offer private investments in retirement plans; Labor Dept rules hang in the balance.</li>
+  <li><a href="https://www.cnbc.com/2026/10/10/vance-microsoft-h1b-layoffs-visa-data.html"><strong>Vance vs. Microsoft: visa data tells a complicated story</strong></a> — The administration barred Microsoft from H-1B sponsorship over alleged preference for foreign workers; CNBC digs into what the numbers actually show.</li>
+  <li><a href="https://www.cnbc.com/2026/10/10/pokemon-card-values-grading-guide.html"><strong>Pokémon card prices are surging again</strong></a> — Scarcity, grading standards and counterfeits are driving volatility; a useful primer if you or your kids are holding cards.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><a href="https://www.bbc.co.uk/news/articles/cw33x4y8k82no"><strong>12 killed in Houthi attack on Riyadh's airport</strong></a> — Over 300 wounded as Houthis strike the Saudi capital; the Saudi coalition called it a war crime. Riyadh has now been hit multiple times since launching its Yemen offensive.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cwvgdpv642g5o"><strong>Russian glide bombs kill 20 in Zaporizhzhia, including children</strong></a> — Zelensky said the strike was Russia's "thanks" for the US diesel deal; Trump responded by saying Ukraine should find a new president.</li>
+  <li><a href="https://www.cnbc.com/2026/10/10/putin-trump-iran-war-russia-diesel.html"><strong>Putin relayed Iran war proposal to Trump, Kremlin says</strong></a> — The call follows the controversial US–Russia diesel deal and deepens questions about Washington's geopolitical alignment.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cmje5x80yg70o"><strong>Hurricane Isaias kills four, knocks out power for 670,000</strong></a> — Florida bore the brunt; the storm has since weakened to a post-tropical cyclone moving inland.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/c680zlny0gk4o"><strong>Young men vanish from Myanmar streets, sold to the army</strong></a> — A BBC investigation finds the desperate junta is forcibly conscripting men to fight ethnic militias and civilian resistance groups.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/c3y0e871rk4vo"><strong>Expedition launches to find Amelia Earhart's plane</strong></a> — A team is heading to a remote Pacific island with sonar and dive equipment, hoping to finally close the 89-year-old mystery.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health</h3>
+<p>A fresh <a href="https://pubmed.ncbi.nlm.nih.gov/42854804/">peer-reviewed study in <em>The American Journal of Cardiology</em></a> finds that GLP-1 receptor agonists produce significantly better heart-failure outcomes in wealthier patients — not because the drugs work differently, but because access, follow-up care and adherence are all shaped by socioeconomic status.</p>
+<p><strong>Plain-language takeaway:</strong> GLP-1s are only as good as the system around them. If you're using one, consistent monitoring and follow-up matter as much as the prescription itself. <em>Not medical advice.</em></p>
+
+<h3>AI — Your Move Today</h3>
+<p>After Nadella's "emergency brake" post, take 10 minutes today to audit one AI tool you use regularly: check whether it can take any <em>external action</em> (send emails, make purchases, submit forms) on your behalf — and if so, turn off that permission until you've read the tool's current privacy policy. One conscious check beats a dozen articles about AI risk.</p>
+
+<h3>Investing — Where to Look</h3>
+<p>Two directions worth watching this week:</p>
+<ul>
+  <li><strong>Investment-grade corporate bonds</strong> — JPMorgan's bullish fixed-income call is the loudest institutional signal in weeks; yields on high-quality credit are historically attractive if rates plateau.</li>
+  <li><strong>Edge computing / Cloudflare ecosystem</strong> — The Deno acquisition tightens Cloudflare's developer moat. Watch how the market prices it Monday morning as a read on broader infrastructure sentiment.</li>
+</ul>
+<p><em>Risk note: geopolitical escalation (Riyadh strike, Ukraine, Iran) can reprice risk assets fast. Not financial advice.</em></p>
+
+<hr>
+
+<p>That's your Sunday brief. The week opens with Disrupt 2026 three days out and a lot of unresolved tension — in AI, in markets, and on the ground in three different war zones. Stay sharp.</p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
