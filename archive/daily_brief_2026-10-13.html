@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-13</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Tuesday, October 13, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-13.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Tuesday, October 13, 2026</h1>
+
+<p>A big morning: Meta just went frontier, Microsoft is cutting its Nvidia dependency, and Asian chip stocks are taking a beating. Plus, a sobering story from Washington that everyone should know about.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/12/fitbit-edge-is-googles-middle-ground-between-fitbit-air-and-pixel-watch/">Fitbit Edge lands at $179.99</a> — Google fills the gap between its budget tracker and Pixel Watch with an OLED screen at a mid-range price.</li>
+  <li><a href="https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/">WindBorne wins $50M Air Force contract</a> — The Silicon Valley weather-balloon startup's AI forecasting tech just got serious defence money behind it.</li>
+  <li><a href="https://techcrunch.com/2026/10/12/smart-ring-maker-ultrahuman-to-roll-out-biological-age-model-across-uae/">Ultrahuman rolls out biological-age model in UAE</a> — Two-year Abu Dhabi trial will clinically validate its smart-ring longevity scoring — a first for the region.</li>
+  <li><a href="https://techcrunch.com/2026/10/12/this-ai-startup-says-it-can-generate-permit-ready-blueprints-in-minutes/">Blueprints AI: permit-ready plans in minutes</a> — Upload a photo or sketch; get code-compliant construction blueprints. Bootstrapped, Santa Monica-based.</li>
+  <li><a href="https://techcrunch.com/2026/10/12/former-plaud-exec-raises-26m-for-ai-app-that-listens-to-you-in-the-background/">$26M raised for always-on AI listener app</a> — Former Plaud exec bets that passive, ambient AI context will make assistants dramatically more useful — and raises serious privacy questions.</li>
+  <li><a href="https://techcrunch.com/2026/10/12/microsoft-president-says-uk-is-best-placed-to-drive-ai-regulation/">Microsoft's Brad Smith: UK should lead AI regulation</a> — He noted that milk and washing machines are subject to more oversight than AI companies. Bold quote, real problem.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/">Meta launches Muse Wonder — its first true frontier model</a> — Bigger, more capable than Muse Spark, with strong coding benchmarks. Meta is no longer playing catch-up; it's in the race.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1009479/meta-muse-wonder-full-ai-model">Muse Wonder Full also drops — Meta's top-tier offering</a> — Two frontier models in one day. Meta's Superintelligence Labs is moving fast after months of criticism over falling behind OpenAI and Google.</li>
+  <li><a href="https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout">Microsoft's Maia 300 chip: less Nvidia, more independence</a> — Third-gen in-house AI chip is now the <em>primary inference system</em> for Microsoft's products. A meaningful strategic shift away from GPU dependency.</li>
+  <li><a href="https://aws.amazon.com/blogs/machine-learning/accessing-openai-gpt-models-on-amazon-bedrock-with-global-cross-region-inference-in-thailand-malaysia-singapore-indonesia-and-taiwan/">OpenAI GPT models on Amazon Bedrock expand across Southeast Asia</a> — GPT-6 Sol, Luna, and Astra now available via Bedrock from Singapore, Jakarta, Bangkok, Kuala Lumpur, and Taipei. Enterprise AI access just got a lot more global.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><a href="https://www.cnbc.com/2026/10/13/sk-hynix-softbank-samsung-electronics-shares-tech-stocks-fall.html">Asian chip stocks tumble — SK Hynix and SoftBank lead losses</a> — Wall Street's semiconductor sell-off rippled overnight into Asia. Kospi dipped below 6,000.</li>
+  <li><a href="https://www.cnbc.com/2026/10/12/stock-market-today-live-updates.html">S&amp;P 500 futures flat ahead of big-bank earnings</a> — JPMorgan, Goldman, Citi, and Wells Fargo all report before Tuesday's open. Watch tone on loan demand and AI investment spend.</li>
+  <li><a href="https://www.cnbc.com/2026/10/12/imf-world-bank-annual-meetings-october-bangkok-asia-.html">IMF raises 2026 global growth forecast to 3.1%</a> — The AI investment boom is doing enough heavy lifting to offset war-driven energy shocks. Notably optimistic from the Fund.</li>
+  <li><a href="https://www.cnbc.com/2026/10/13/six-flags-shares-plunge-after-hours-deadly-roller-coaster-incident-goliath-georgia.html">Six Flags shares drop 10%+ after deadly Georgia coaster incident</a> — After-hours plunge on reports of a fatality at its Georgia park. Litigation risk and reputational damage are the immediate concerns.</li>
+  <li><a href="https://www.cnbc.com/2026/10/12/elon-musk-republican-donations-2026-midterm-election.html">Musk donates $276M to Republican groups — biggest 2026 midterm donor</a> — Record spending as Musk rebuilds ties with Trump and maintains significant federal government business relationships.</li>
+  <li><a href="https://www.cnbc.com/2026/10/13/red-bull-f1-ai-max-verstappen.html">Red Bull uses AI for split-second F1 race calls</a> — Real-time decision support for Verstappen's pit strategy, but the team insists humans still hold final judgment.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><a href="https://www.bbc.co.uk/news/articles/cjly0zqq27e4o">Saudi Arabia vows 'serious response' to Houthi airport strikes</a> — Two hits on Riyadh's airport in 48 hours, 13 dead. Regional escalation risk is rising sharply.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cvlyd4pdlwkxo">Russia strikes six Ukrainian energy sites since Trump's ceasefire announcement</a> — Zelensky says attacks continued despite the US president's energy-infrastructure truce claim. Moscow remains silent on the deal.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cvp8glg97393o">Immigration agents search Rep. Ilhan Omar's home</a> — Omar called it a politically motivated raid. A significant escalation in the White House's conflict with its congressional critics.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cmn045en7d88o">Breaking Bad actor RJ Mitte dies at 34</a> — Mitte, who had cerebral palsy and played Walter White Jr, has died. Tributes pouring in across social media.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cm2keg7910gvo">14-year-old arrested after shooting two teachers at French school</a> — Principal and a teacher injured in a middle-school attack; another sign of a troubling trend in European school safety.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health — GLP-1s and Your Lungs</h3>
+<p>A new review in <em>The European Respiratory Journal</em> examines <a href="https://pubmed.ncbi.nlm.nih.gov/42860278/">GLP-1-based therapies in lung diseases</a>, finding emerging evidence that GLP-1 receptor agonists may have anti-inflammatory effects in the airways — potentially relevant for asthma and COPD alongside metabolic benefits.</p>
+<p><strong>Plain-language takeaway:</strong> If you or someone you know uses a GLP-1 drug primarily for weight or blood sugar and also has a respiratory condition, this is a conversation worth having with a doctor — the benefits may extend further than the label says. <em>Not medical advice.</em></p>
+
+<h3>AI — Your Move Today</h3>
+<p>Meta's Muse Wonder is live. <strong>Go test it on your hardest coding or reasoning task today</strong> — compare its output directly against whatever model you currently rely on. Frontier model gaps close fast, and your own benchmark is worth more than any press release.</p>
+
+<h3>Investing — Where to Look</h3>
+<p><strong>Watch #1:</strong> Bank earnings today (JPMorgan, Goldman, Citi, Wells Fargo) — listen specifically for commentary on AI infrastructure lending and deposit trends. Strong results could reverse this week's chip-sector jitters.</p>
+<p><strong>Watch #2:</strong> Microsoft's Maia 300 chip story is a slow-burn positive for $MSFT margins — reduced Nvidia GPU spend means lower inference costs over time.</p>
+<p><em>Risk note: Asian semiconductor volatility is spreading; if the chip sell-off deepens, even strong bank earnings may not hold broader indices. Not financial advice.</em></p>
+
+<hr>
+
+<p>That's your Tuesday. Stay curious, stay sceptical, and check back tomorrow — earnings season is just getting started.</p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
