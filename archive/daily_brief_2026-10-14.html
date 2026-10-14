@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-14</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Wednesday, October 14, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-14.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Wednesday, October 14, 2026</h1>
+
+<p>Google dropped its long-awaited Gemini 4 Argon model yesterday, and an OpenAI employee was arrested for bugging a conference room. It is a full news morning — let's get into it.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/13/fbi-arrests-openai-employee-accused-of-planting-hidden-recording-device-in-conference-room/">FBI arrests OpenAI employee over hidden conference-room bug</a> — Abdulrahman Alfozan, a 35-year-old Saudi national, allegedly planted a device to capture conversations about OpenAI's superintelligence work. The FBI director called it a scheme targeting "sensitive communications."</li>
+  <li><a href="https://techcrunch.com/2026/10/13/judge-orders-openai-to-turn-over-hiring-records-in-apple-trade-secrets-case/">Judge orders OpenAI to hand hiring records to Apple</a> — A federal judge ruled Apple can access interview materials, private messages, and testimony involving former Apple employees now at OpenAI. Two legal headaches in one day for the company.</li>
+  <li><a href="https://techcrunch.com/2026/10/13/science-corporation-implants-its-vision-restoring-chip-in-its-first-stargardt-disease-patient/">Science Corp implants vision-restoring chip in first Stargardt patient</a> — Max Hodak's company, building on its PRIMA partnership, completed the first human implant for the degenerative eye disease. A milestone on its path toward a full brain-computer interface.</li>
+  <li><a href="https://techcrunch.com/2026/10/13/cambridge-heavy-industries-has-been-quietly-building-a-desktop-fusion-device/">Cambridge Heavy Industries reveals desktop fusion device</a> — The stealth startup is building a small laser-powered fusion machine designed to fuel next-generation power plants. Compact fusion just got a little more real.</li>
+  <li><a href="https://techcrunch.com/2026/10/13/helix-carbon-makes-iron-cheaper-by-upcycling-blast-furnace-pollution-see-how-at-techcrunch-disrupt/">Helix Carbon turns blast-furnace pollution into cheaper iron</a> — The startup upcycles steelmaking emissions to cut costs and emissions simultaneously, pitching a rare win-win for heavy industry.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1009862/google-releases-gemini-4-argon">Google releases Gemini 4 Argon</a> — After months on the sidelines, Google's newest frontier model is out. It promises stronger reasoning, less hedging, and fewer clichés. Google says it can "compete with the best the industry has to offer."</li>
+  <li><a href="https://deepmind.google/blog/gemini-4-argon-for-robotics/">Gemini 4 Argon comes to robotics too</a> — DeepMind published a companion post showing the model applied to physical robot control, signalling Google's push beyond pure language tasks.</li>
+  <li><a href="https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents">Shopify opens 1 billion listings to AI shopping agents</a> — Shoppers can now authorise their AI agents to browse and buy from Shopify's full catalogue autonomously. Agentic commerce is no longer theoretical.</li>
+  <li><a href="https://www.cnbc.com/2026/10/13/jpmorgan-ai-agents-account-access.html">JPMorgan blocks outside AI agents from touching accounts</a> — CEO Jamie Dimon flagged "rogue agents operating at scale" as a threat. The bank is building defensive tools while competitors race to open up. A significant line in the sand.</li>
+  <li><a href="https://www.technologyreview.com/2026/10/13/1145755/ai-labs-buying-data-from-dead-startups-to-train-models/">AI labs are buying training data from failed startups</a> — MIT Tech Review reveals a quiet market: labs are snapping up code bases, chat logs, and user data from wound-down companies for tens of thousands of dollars per archive.</li>
+  <li><a href="https://www.theverge.com/games/1010097/epic-games-disney-project-ai-coding-art">Epic goes "AI-first" on its delayed Disney game</a> — Developers are under an Anthropic Claude mandate to use AI for both code and art generation. The project was already delayed from March; this is the new plan to ship it.</li>
+  <li><a href="https://www.cnbc.com/2026/10/13/anthropic-q3-financials-ipo.html">Anthropic to share fresh revenue numbers with investors this week</a> — The AI lab is gathering investors at HQ and will disclose updated financials. With an IPO on the horizon, these numbers will set the narrative.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><a href="https://www.cnbc.com/2026/10/14/singapore-gdp-q3.html">Singapore Q3 GDP softens but beats the 5% forecast</a> — Growth cooled from a four-year high but still surprised to the upside. Singapore remains one of the steadier macro anchors in Asia right now.</li>
+  <li><a href="https://www.cnbc.com/2026/10/13/stock-market-today-live-updates-.html">Futures flat; chip stocks and mixed bank results drag Tuesday's session</a> — Markets are treading water ahead of today's consumer inflation print. Watch the CPI number closely — it could reset rate expectations fast.</li>
+  <li><a href="https://www.cnbc.com/2026/10/13/bank-of-america-treasury-money-laundering.html">Bank of America fined $1.2 billion for money-laundering violations</a> — Treasury dropped the action the day before BofA's earnings report. The timing is brutal and the fine is not small.</li>
+  <li><a href="https://www.cnbc.com/2026/10/14/goldman-says-investors-seek-profitable-chinese-business-growth-abroad.html">Goldman: investors want profitable Chinese overseas expansion, not cheap exports</a> — Sluggish domestic demand is pushing Chinese firms into new markets; Goldman says global investors are selectively interested in the ones with real margin stories.</li>
+  <li><a href="https://www.cnbc.com/2026/10/13/anthropic-wants-court-in-dc-to-rehear-appeal-of-pentagon-blacklist-.html">Anthropic pushes court to rehear Pentagon blacklisting appeal</a> — The DoD ban on Anthropic's models in certain contexts is still live. A rehearing could unlock a significant government contract pipeline for the lab.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><a href="https://www.bbc.co.uk/news/articles/ck1wvd9dvv22o?at_medium=RSS&at_campaign=rss">Pope Leo diagnosed with lung cancer after successful surgery</a> — The Vatican confirmed a lower lobe of the Pope's right lung was removed in what doctors described as curative surgery. Recovery is underway.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/ck20r9qpw505o?at_medium=RSS&at_campaign=rss">Russian strikes hit Kyiv power plant; Zelensky says no early warning given</a> — Ballistic missiles targeted key energy infrastructure. Zelensky's accusation that partners failed to warn Ukraine in time adds a fresh diplomatic sting.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cw99zpmnxzmjo?at_medium=RSS&at_campaign=rss">Germany puts Ukrainian on trial over Nord Stream pipeline blasts</a> — Four years after the attacks, Serhii K appears in court. The trial could reopen politically charged questions about who authorised the operation.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/crx2d60y1py3o?at_medium=RSS&at_campaign=rss">Missiles intercepted near Riyadh after Saudi coalition hits Yemen fuel depot</a> — Escalation in the Red Sea corridor continues to rattle Gulf security — and airline route maps.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health</h3>
+<p>A new <em>Lancet</em>-published evaluation of Google's diagnostic chatbot AMIE — reviewed this week by STAT — found it performed competitively with physicians on structured diagnostic conversations, though real-world gaps remain. <a href="https://www.statnews.com/2026/10/13/google-amie-diagnostic-chatbot-study-lancet-health-tech/">Read the STAT breakdown here.</a></p>
+<p><strong>Plain-language takeaway:</strong> AI can now match doctors on text-based symptom sorting in controlled settings. It is not a replacement, but it is a legitimate triage tool worth knowing about. If you use any AI health assistant, cross-check anything flagged with a real clinician. <em>Not medical advice.</em></p>
+
+<h3>AI — Your Move Today</h3>
+<p>Google's Gemini 4 Argon is live right now. <strong>Open Google AI Studio, paste in your most complex recurring work prompt, and run it side-by-side against your current model.</strong> The new model is specifically tuned for multi-step reasoning with less hedging — you will notice the difference in one session.</p>
+
+<h3>Investing — Where to Look</h3>
+<p>Two directions worth watching: <strong>frontier AI infrastructure plays</strong> (Anthropic's revenue reveal this week could move private valuations and listed proxies) and <strong>energy stocks with data-centre exposure</strong> (Gemini 4 Argon and the broader model race means power demand estimates keep rising). On the risk side — today's US CPI print could spike bond yields and hit growth stocks hard if it surprises to the upside. Size positions accordingly. <em>Not financial advice.</em></p>
+
+<hr>
+
+<p><em>That's your October 14 brief. Big model drop, a spy drama at OpenAI, and a Pope in surgery — not a slow news day. See you tomorrow.</em></p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
