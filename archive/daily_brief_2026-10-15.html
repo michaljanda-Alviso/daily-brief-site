@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-15</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Thursday, October 15, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-15.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Thursday, October 15, 2026</h1>
+
+<p>Markets are rattled, AI lawsuits are multiplying, and the technology sector is having a rough morning after hotter inflation and a big bank miss. Here's everything that matters before you start your day.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/14/ambanis-jio-seeks-to-raise-3-2b-in-what-could-be-indias-biggest-ipo/"><strong>Jio files for India's biggest IPO at $3.2B</strong></a> — Mukesh Ambani's telecom giant plans to use most of the proceeds to pay down debt as it pushes beyond connectivity into services.</li>
+  <li><a href="https://techcrunch.com/2026/10/14/electric-vehicle-sales-in-the-u-s-are-showing-signs-of-life/"><strong>US EV sales grow for third straight quarter</strong></a> — A quiet but consistent recovery in demand, suggesting the post-hype hangover may finally be lifting.</li>
+  <li><a href="https://techcrunch.com/2026/10/14/ambrosia-energy-will-build-a-10-gwh-factory-in-texas-to-make-batteries-for-off-grid-data-centers/"><strong>Ambrosia Energy building 10 GWh Texas battery factory</strong></a> — Designed to pair with solar and power off-grid data centers 24/7 — a direct play on AI infrastructure's energy hunger.</li>
+  <li><a href="https://techcrunch.com/2026/10/14/flock-ceo-says-its-microphones-detect-just-gunshots-its-website-says-different/"><strong>Flock's CEO says its mics hear "just gunshots" — the website disagrees</strong></a> — ACLU and privacy advocates are pressing surveillance startup Flock Safety over the real capabilities of its audio hardware; the company also confirmed it has not dropped any law enforcement clients despite abuse reports.</li>
+  <li><a href="https://techcrunch.com/2026/10/14/gudea-leverages-ai-to-help-organizations-prevent-social-media-crises-before-they-erupt/"><strong>Gudea tracks online rumours before they go viral</strong></a> — Bills itself as a "storm tracker for the internet," flagging misinformation and hate-speech signals before they spiral into brand crises.</li>
+  <li><a href="https://techcrunch.com/2026/10/14/intero-biosystems-wants-drugmakers-to-test-on-mini-human-intestines-not-animals/"><strong>Intero Biosystems sells lab-grown intestines to replace animal tests</strong></a> — Timely as regulators push for humane alternatives; the startup is scaling production of human organoids for drug testing.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety"><strong>Eight states sue OpenAI over child safety</strong></a> — Iowa, Kansas, Nebraska, West Virginia, Arkansas, Arizona, Idaho, and Montana allege ChatGPT endangers children and that OpenAI misled users about safety guardrails.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1011276/openai-employee-unreleased-product-plans"><strong>OpenAI: ex-employee took product files to Apple</strong></a> — The company claims a former staffer exfiltrated over 100 internal product documents and presented them to Apple's Asia operations VP — a significant trade-secret escalation.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1011311/the-ai-race-is-back-on"><strong>The AI race is back on</strong></a> — After Anthropic and OpenAI pulled ahead, Google and Meta are re-entering contention; the competitive gap is narrowing faster than it appeared two weeks ago.</li>
+  <li><a href="https://www.theverge.com/news/1011654/mckinsey-ai-client-interview"><strong>McKinsey makes job applicants spar with a fake AI client</strong></a> — Entry-level candidates now face a 10-minute AI simulation covering 80% of real consulting scenarios — a sign AI-screening is going mainstream in white-collar hiring.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1011369/youtube-music-ai-label"><strong>YouTube adds "Made with AI" labels to songs</strong></a> — Tracks that were "altered or fully generated" by AI will carry a visible badge, extending the platform's existing video-labelling policy to audio.</li>
+  <li><a href="https://deepmind.google/blog/on-device-ai-scam-detection-mddi/"><strong>DeepMind and Singapore build on-device scam detector</strong></a> — Lightweight Gemma models intercept conversational scams in private chats with zero cloud data transfer — a privacy-first approach to fraud protection.</li>
+  <li><a href="https://www.theverge.com/policy/1011417/new-york-ag-characterai-bankruptcy"><strong>40 AGs demand Character.AI user data be protected in bankruptcy</strong></a> — New York AG Letitia James is leading a bipartisan coalition to ensure consumer data isn't quietly sold off as the platform winds down.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><a href="https://www.cnbc.com/2026/10/14/coreweave-stock-bond-yields-ai-debt.html"><strong>CoreWeave shares tumble 15% as bond yields near 15%</strong></a> — Heavy borrowing to fund GPU infrastructure is spooking bond markets; traders are piling into put options betting further downside.</li>
+  <li><a href="https://www.cnbc.com/2026/10/14/dell-stock-barclays-enterprise-ai.html"><strong>Dell drops 11% in data centre sell-off</strong></a> — Barclays downgraded Dell, HPE, and NetApp on fears that enterprise AI adoption is moving slower than the hardware cycle assumed.</li>
+  <li><a href="https://www.cnbc.com/2026/10/14/bank-of-america-bac-q3-2026-earnings.html"><strong>Bank of America misses on trading revenue, hit by $1.2B fine</strong></a> — The Treasury penalty and weak trading desk results sent shares lower, adding to a bad day for the whole banking sector.</li>
+  <li><a href="https://www.cnbc.com/2026/10/14/anduril-tender-offer-valuation.html"><strong>Anduril tender offer values defence tech firm at $90B</strong></a> — A signal that defence-AI is one of the few corners of the market investors are still reaching for aggressively.</li>
+  <li><a href="https://www.cnbc.com/2026/10/14/stock-market-today-live-updates.html"><strong>S&amp;P 500 futures slip after hot inflation print</strong></a> — Yesterday's above-consensus CPI data is still weighing on sentiment; watch today's jobless claims for the next catalyst.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><a href="https://www.bbc.co.uk/news/articles/c6zxj0gzk4x4o?at_medium=RSS&at_campaign=rss"><strong>Netflix to cut 1,000 jobs — steepest since 2022</strong></a> — Around 6% of global headcount goes; the streaming giant is tightening costs even as subscriber numbers hold up.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/c8wy9veedgygo?at_medium=RSS&at_campaign=rss"><strong>Musk suggests US government may be throttling Ukraine's Starlink</strong></a> — Ukraine reports persistent speed caps disrupting battlefield drone operations; Musk's comments add a political dimension to an already fraught dependency.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cq80zk5k2ep4o?at_medium=RSS&at_campaign=rss"><strong>Student protesters storm government buildings in Albania</strong></a> — A second day of mass demonstrations over university conditions and youth unemployment turned violent, with buildings set on fire.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cw5yn8rn04ljo?at_medium=RSS&at_campaign=rss"><strong>Kenya confirms second Ebola case</strong></a> — A relative of last week's fatality tests positive; health authorities are tracing contacts as the outbreak risk grows.</li>
+  <li><a href="https://www.bbc.co.uk/news/videos/ck78pj2qy42po?at_medium=RSS&at_campaign=rss"><strong>Australia tables law to let users switch off recommendation algorithms</strong></a> — Big platforms would be legally required to offer an opt-out from algorithmic feeds — a move that could set a template for other democracies.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health</h3>
+<p>A <a href="https://www.statnews.com/2026/10/14/health-news-glp-1-study-impact-interactions-with-criminal-justice-system-employment/">new clinical trial examining GLP-1 weight-loss drugs</a> is now measuring effects beyond the scale — researchers are tracking whether these medications reduce substance use disorders and improve employment and housing stability. Early signals are promising. Plain-language takeaway: GLP-1 drugs may be doing something systemic to reward-seeking behaviour in the brain, not just appetite. If you're already on one, the downstream effects on motivation and habit formation are worth discussing with your doctor. <em>Not medical advice.</em></p>
+
+<h3>AI — Your Move Today</h3>
+<p>McKinsey is now using AI simulations in job interviews. <strong>Practice speaking out loud with an AI today</strong> — open ChatGPT or your preferred model, describe a real work problem you've faced, and ask it to push back as a sceptical client or interviewer. Five minutes of verbal sparring will expose gaps in your reasoning that typing never does.</p>
+
+<h3>Investing — Where to Look</h3>
+<p>Two diverging signals worth tracking: <strong>defence tech</strong> (Anduril's $90B private valuation) is attracting serious capital even as broader AI hardware names (CoreWeave, Dell) are selling off sharply. The thesis: investors are rotating from speculative GPU-debt plays toward companies with locked-in government contracts. <strong>Watch the spread between neocloud bonds and defence-sector equity</strong> — if it widens further, it suggests the market is pricing a slower enterprise AI ramp than bulls assumed. Risk: any geopolitical de-escalation or defence budget squeeze could hit names like Anduril hard and fast. <em>Not financial advice.</em></p>
+
+<hr>
+
+<p><em>Stay sharp out there — it's a noisy one. Back tomorrow.</em></p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
