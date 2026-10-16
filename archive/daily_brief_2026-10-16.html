@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-16</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Friday, October 16, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-16.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Thursday, October 16, 2026</h1>
+
+<p>A global tech sell-off deepened overnight as AI funding nerves rattled hardware stocks, while Meta and Apple made an unlikely team to push open AI models onto your desktop. Here is everything worth knowing before your first coffee.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/"><strong>Meta launches open-weight Muse Spark Open for Macs</strong></a> — Meta and Apple teamed up to run the model locally on Apple silicon; it's now also deployable via <a href="https://aws.amazon.com/blogs/machine-learning/metas-muse-spark-open-now-available-in-amazon-sagemaker-jumpstart/">Amazon SageMaker JumpStart</a>. Big deal for anyone who wants powerful open models without the cloud bill.</li>
+  <li><a href="https://techcrunch.com/2026/10/15/amazon-devices-chief-panos-panay-sees-a-future-where-ai-devices-replace-the-need-to-use-apps/"><strong>Amazon's Panay: apps are on their way out</strong></a> — At Disrupt, the devices chief described ambient AI that anticipates your needs before you open a single app. Worth watching if you build or invest in mobile software.</li>
+  <li><a href="https://techcrunch.com/2026/10/15/bluesky-wants-to-make-it-easier-to-buy-sell-and-fundraise-on-the-network/"><strong>Bluesky eyes commerce beyond ads</strong></a> — The network wants buying, selling, and fundraising built in. A direct challenge to X and LinkedIn's monetisation playbooks.</li>
+  <li><a href="https://techcrunch.com/2026/10/15/bluesky-expands-its-ai-powered-attie-app-to-let-anyone-build-websites-games-and-more/"><strong>Bluesky's Attie now lets anyone vibe-code games and sites</strong></a> — "Social vibe coding" lands on Bluesky; users can ship interactive experiences straight to the network's audience.</li>
+  <li><a href="https://techcrunch.com/2026/10/15/when-it-came-to-cal-ais-viral-success-a-small-army-of-influencers-paid-off/"><strong>Cal AI: $30M revenue, influencer army, then acquisition</strong></a> — The calorie-tracking app was bought by MyFitness in March. A clean case study in creator-led growth.</li>
+  <li><a href="https://techcrunch.com/2026/10/15/volvo-makes-a-bigger-bet-on-nvidia/"><strong>Volvo doubles down on Nvidia for hands-free driving</strong></a> — The partnership expands beyond EVs, making Nvidia's stack the backbone of Volvo's next-gen autonomous systems.</li>
+  <li><a href="https://techcrunch.com/2026/10/15/and-the-winner-of-startup-battlefield-at-disrupt-2026-is-intero-biosystems/"><strong>Intero Biosystems wins Startup Battlefield 2026</strong></a> — The mini-intestine testing startup beat 199 rivals to take the $100,000 grand prize at Disrupt.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs"><strong>ChatGPT can now read your open Chrome tabs</strong></a> — Install the extension, tag Chrome in the web or desktop app, and the model sees your active tabs. Powerful and worth reviewing your privacy settings today.</li>
+  <li><a href="https://techcrunch.com/2026/10/15/anthropic-is-letting-metr-researchers-look-under-the-hood-with-employee-level-access/"><strong>Anthropic gives METR employee-level access for safety audits</strong></a> — METR will publish independent risk assessments and Anthropic has explicitly waived its right to block them. A meaningful transparency move in a sector starved of it.</li>
+  <li><a href="https://openai.com/index/introducing-the-rosalind-academic-plan"><strong>OpenAI launches GPT-Rosalind for academic labs</strong></a> — Sponsored access to a life-sciences-tuned model lands for eligible university researchers. Could accelerate drug discovery pipelines.</li>
+  <li><a href="https://deepmind.google/blog/accelerating-antimicrobial-discovery/"><strong>Google DeepMind accelerates search for antimicrobial peptides</strong></a> — The Antigravity for Science platform is being used to find novel peptides that could fight drug-resistant bacteria. See the health section below for more.</li>
+  <li><a href="https://www.theverge.com/games/1012512/sega-total-war-shogun-2-remaster-pulled"><strong>Sega pulls Shogun 2 remaster after AI upscaling backlash</strong></a> — Players flagged sloppy AI-assisted texture work; the game was delisted days after launch. A cautionary tale for studios cutting corners with generative tools.</li>
+  <li><a href="https://www.theverge.com/policy/1012445/donald-trump-ai-photo-white-house-rennovation-column"><strong>Trump posts AI-edited White House photo on Truth Social</strong></a> — Google's detector flagged the "restored" column image as AI-generated. The politics of AI fakery are intensifying ahead of midterms.</li>
+  <li><a href="https://huggingface.co/blog/ibm-granite/granite-switch-4-1"><strong>IBM releases Granite Switch 4.1: chat, decisions, speech — one endpoint</strong></a> — A multimodal model covering text, reasoning, and speech from a single API. Useful for enterprise teams consolidating their model stack.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><a href="https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html"><strong>CoreWeave CDS hit distress levels</strong></a> — Credit markets are flashing red on AI infrastructure debt. Watch for contagion across GPU-rental balance sheets.</li>
+  <li><a href="https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html"><strong>Nvidia, AMD, Dell sink in global tech rout</strong></a> — AI funding anxiety triggered a broad hardware sell-off across US and Asian markets. Not a single-day blip — this is a trend worth tracking.</li>
+  <li><a href="https://www.cnbc.com/2026/10/15/netflix-bela-bajaria-peter-rice.html"><strong>Netflix CCO Bela Bajaria out; Peter Rice takes over</strong></a> — The former Disney exec steps in as Netflix fights intensifying competition for viewer attention.</li>
+  <li><a href="https://www.cnbc.com/2026/10/15/penske-automotive-agrees-to-be-taken-private-by-penske-mitsui.html"><strong>Penske Automotive goes private at $16.3B</strong></a> — Penske and Mitsui buy out public shareholders. One of the larger take-privates of 2026.</li>
+  <li><a href="https://www.cnbc.com/2026/10/15/trump-ballroom-nvidia-cisco-donations.html"><strong>Nvidia and Cisco confirmed multimillion-dollar White House ballroom donors</strong></a> — Documents show Big Tech funding the Trump renovation project, raising fresh questions about corporate access.</li>
+  <li><a href="https://www.cnbc.com/2026/10/15/kfc-coca-cola-pepsi-switch.html"><strong>KFC ditches Pepsi for Coke in US restaurants</strong></a> — A major symbolic and commercial win for Coca-Cola, ending a decades-long PepsiCo arrangement.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><a href="https://www.bbc.co.uk/news/articles/cm62y6lp73zdo"><strong>Houthi missile strike kills five at Yemeni presidential palace</strong></a> — Ballistic missiles hit al-Maashiq Palace; the prime minister survived. The conflict continues to escalate.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cqgm0j4kjvevo"><strong>Tip-off foiled US teen's plot to attack Hindu temple</strong></a> — A jammed weapon and a community alert stopped the 19-year-old suspect outside the place of worship in what police are calling a near-miss.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cmq8n513x523o"><strong>Letters with suspicious substances sent to US senators and election offices</strong></a> — Oklahoma, Ohio, and Louisiana confirmed as targets; timing ahead of midterms adds to the tension.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cr5yn5wel153o"><strong>School roof collapse in Pakistan kills at least 33 children</strong></a> — A teacher also died; more than a dozen remain injured. Infrastructure neglect in the region has repeatedly cost lives.</li>
+  <li><a href="https://www.statnews.com/2026/10/15/health-news-kenya-reports-second-ebola-case/"><strong>Kenya reports second Ebola case</strong></a> — Congo's outbreak has now topped 4,000 deaths and 9,000 cases. Regional containment is under serious strain.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health</h3>
+<p><strong>This week's signal:</strong> <a href="https://deepmind.google/blog/accelerating-antimicrobial-discovery/">Google DeepMind's Antigravity platform</a> is being used to screen billions of peptide candidates for antimicrobial properties — work that would take wet-lab researchers decades. The plain-language takeaway: AI is dramatically narrowing the gap between peptide discovery and clinical candidates for drug-resistant infections, which kill more than a million people a year. Separately, <a href="https://www.statnews.com/2026/10/15/melanoma-diagnosis-mrna-cancer-vaccine-stat-summit-boston-2026/">Merck and Moderna's personalised mRNA cancer vaccine</a> is gaining real-world validation — a melanoma patient's story shared at the STAT Summit this week puts a human face on what the science actually delivers. <em>Not medical advice.</em></p>
+
+<h3>AI — Your Move Today</h3>
+<p>Install the <strong>ChatGPT Chrome extension</strong> and test the new tab-reading feature on a research task you do manually today — summarise a cluster of open tabs with a single prompt. Note what it gets right and where it hallucinates, then decide whether it earns a permanent spot in your workflow. <a href="https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs">Details here.</a></p>
+
+<h3>Investing — Where to Look</h3>
+<p><strong>Watch:</strong> The CoreWeave credit stress and the broader hardware sell-off are worth monitoring as leading indicators for AI infrastructure valuations — if CDS spreads keep widening, equity re-ratings in GPU-cloud names could follow. On the upside, open-weight model momentum (Meta's Muse Spark, IBM Granite) is quietly building a case for on-premise AI hardware plays and edge compute suppliers. <strong>Risk:</strong> Rising Treasury yields are already pressuring dividend sectors and bond portfolios — retirees and income investors should review duration exposure before adding to rate-sensitive positions. <em>Not financial advice.</em></p>
+
+<hr>
+
+<p><em>That's your October 16 brief. Stay sharp, stay skeptical, and we'll see you tomorrow morning.</em></p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
