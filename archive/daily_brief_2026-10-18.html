@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-18</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Sunday, October 18, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-18.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Sunday, October 18, 2026</h1>
+
+<p>A big weekend for AI corporate moves, French unrest spilling into Monday's agenda, and a deadly fire on a Canadian military base. Here's what matters before you start your week.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><strong><a href="https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/">Disney acquires Character.AI's workforce</a></strong> — Disney has agreed to hire the vast majority of Character.AI's staff in a stalking horse bid. Another buyer could still emerge with a higher offer, so this isn't fully closed yet.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/18/no-agenda-no-rush-no-leaving-san-francisco-benchmarks-partners-on-investing-in-a-frenzied-market/">Benchmark partners: no rush, no exodus</a></strong> — The storied VC firm's five remaining partners pushed back on frenzied-market pressure, insisting they're sticking to San Francisco and their deliberate style despite fund growth and partner changes.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/18/everyones-watching-the-elizabeth-holmes-documentary-you-can-see-everything/">Holmes documentary breaks records</a></strong> — <em>You Can See Everything</em> is posting the second-biggest documentary opening weekend ever. Theranos is apparently still box-office gold.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/18/techcrunch-mobility-rivians-next-act/">Rivian's next act</a></strong> — TechCrunch Mobility breaks down what comes next for the EV maker as AI increasingly shapes vehicle strategy.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><strong><a href="https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/">Anthropic pledges 5% of shares to public benefit fund</a></strong> — The AI lab is committing a slice of its equity to a new public benefit fund, a notable governance move as scrutiny of AI profits intensifies. <a href="https://www.anthropic.com/news/public-benefit-fund">Anthropic's own announcement here.</a></li>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1013541/a-woman-was-arrested-in-philly-for-blocking-a-delivery-robot">Woman arrested for blocking Uber delivery robot in Philadelphia</a></strong> — Carolyn Marvin was charged with disorderly conduct after deliberately standing in front of an Uber robot and refusing to move, citing job losses for human delivery workers. The first high-profile robot-protest arrest signals a new kind of labor flashpoint.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><strong><a href="https://www.cnbc.com/2026/10/18/meta-tesla-netflix-earnings-preview.html">Big earnings week: Meta, Tesla, airlines up next</a></strong> — Meta Platforms, Tesla, General Motors, and major airlines all report this week. Analysts are watching for AI capex guidance from Meta and delivery numbers from Tesla.</li>
+  <li><strong><a href="https://www.cnbc.com/investingclub/2026/10/18/jim-cramer-why-i-am-taking-the-other-side-of-the-trade-that-crushed-the-market-friday.html">Cramer buys Friday's dip</a></strong> — After Friday's sharp sell-off, Cramer argues the move was overdone and is taking the contrarian side. Worth watching into Monday's open.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/18/india-ai-nifty50-sensex-investors.html">India's finance minister flags capital outflow risk</a></strong> — Easy exits and excess liquidity are being blamed for the Nifty 50's underperformance; outflows flagged as the top 2027 risk for Indian equities.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/18/roth-conversion-2026.html">Roth conversions: when the math doesn't work</a></strong> — A top-ranked advisor warns that many 2026 year-end Roth conversions won't pencil out given current bracket dynamics. Check your numbers before December.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/18/retirement-income-funds-taxes.html">Options ETF income trap for Boomers</a></strong> — Covered call ETFs are popular for monthly income, but the tax drag is often underestimated. Know what you own.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/cxj0ly1m3q81o">At least 4 dead in fire at Canadian military base</a></strong> — A major overnight fire at a base in Alberta killed four and injured dozens. PM Carney called it one of the worst peacetime tragedies for Canadian forces on home soil.</li>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/cw240zl08dm5o">Macron calls for calm after France riots</a></strong> — The French president addressed the nation after a weekend of nationwide disorder, blaming "insurrectionist elements from radical far-left groups." <a href="https://www.bbc.co.uk/news/videos/c9dr8kem27zeo">Historic Limoges town hall was set alight.</a></li>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/c3eweygrjzd7o">Oil facilities and data centre hit in overnight attack on St Petersburg</a></strong> — At least one person killed; a facility used by Russia's Facebook equivalent was also struck. Escalation in the Russia-Ukraine conflict continues despite US sanctions waivers.</li>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/c9p8gz7zx4peo">Trump: Russia sanctions waiver is to keep peace talks alive</a></strong> — The president defended blocking sanctions two days before they were due to take effect, framing it as diplomatic leverage. Kyiv and European allies remain skeptical.</li>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/cwdd8z6gyy96o">EU China tariffs are hitting Ukraine too, steel boss warns</a></strong> — Ukraine's largest steel company says it's been caught in measures aimed at cheap Chinese imports, adding economic strain on a country already at war.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health — GLP-1s and the Brain</h3>
+<p>A new meta-analysis published in <em>Alzheimer's &amp; Dementia</em> finds that <strong>GLP-1 receptor agonists</strong> — the class covering semaglutide and tirzepatide — show measurable cognitive benefits in patients with Alzheimer's disease and mild cognitive impairment (MCI).</p>
+<ul>
+  <li>The pooled analysis suggests reduced cognitive decline versus placebo, though effect sizes varied across trials.</li>
+  <li>A separate cohort study found GLP-1 use linked to <strong>lower rates of new atrial fibrillation</strong> in obese, non-diabetic adults with chronic kidney disease — a population often excluded from earlier trials.</li>
+</ul>
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/42890838/">Read the Alzheimer's meta-analysis on PubMed.</a> <em>Not medical advice — discuss any medication changes with your doctor.</em></p>
+
+<h3>AI — Your Move Today</h3>
+<p><strong>Set up a shared "AI wins" channel at work this week.</strong> With Anthropic's public benefit pledge and Disney absorbing Character.AI talent, AI governance is moving fast. Create a Slack or Teams channel where colleagues log one concrete AI productivity win per week — it builds institutional knowledge and surfaces the real use cases your team is actually finding valuable, not the theoretical ones.</p>
+
+<h3>Investing — Where to Look</h3>
+<ul>
+  <li><strong>Earnings week focus:</strong> Meta's results (due midweek) will set the tone for the entire AI-infrastructure trade — watch AI capex guidance closely. A miss or a pullback in spending could ripple through chip and data-centre names.</li>
+  <li><strong>Contrarian angle:</strong> Friday's sell-off created potential entry points in oversold quality names — but verify <em>why</em> each name sold off before stepping in. Macro fear and earnings fear are different risks.</li>
+  <li><strong>Risk sentence:</strong> India outflow risk and ongoing French civil unrest add to an already jittery macro backdrop — keep position sizes disciplined heading into a heavy earnings week. <em>Not financial advice.</em></li>
+</ul>
+
+<hr>
+
+<p>That's your Sunday setup. Big earnings week, a continent still smouldering, and an AI sector reshuffling its corporate structures in real time — stay sharp out there.</p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
