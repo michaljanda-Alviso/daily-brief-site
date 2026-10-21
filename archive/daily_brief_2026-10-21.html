@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-21</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Wednesday, October 21, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-21.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Tuesday, October 21, 2026</h1>
+
+<p>Markets are digesting a packed earnings night while two of the world's most valuable companies weigh a historic merger. Here's everything that moved overnight, stripped down to what matters.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/20/spacex-and-tesla-boards-form-special-committees-to-review-merger/"><strong>Tesla &amp; SpaceX form merger review committees</strong></a> — Independent directors on both boards are formally studying a combination. Musk says he's not on either committee, which is the right thing to say and also deeply unconvincing.</li>
+  <li><a href="https://techcrunch.com/2026/10/20/spacexs-ai-business-is-beating-expectations/"><strong>SpaceX posts $4.4B net income in Q3</strong></a> — AI was the engine. The company is profitable ahead of any potential merger math, which strengthens Musk's negotiating hand considerably.</li>
+  <li><a href="https://techcrunch.com/2026/10/20/anthropics-cloud-partnerships-are-getting-messy/"><strong>Anthropic's cloud deals are fraying</strong></a> — Cloud providers increasingly view Anthropic as a competitor and are squeezing its compute access — right before a planned November IPO. Bad timing.</li>
+  <li><a href="https://techcrunch.com/2026/10/20/openai-acquires-startup-orchestra-bio%e2%81%a0-to-beef-up-its-biotech-business/"><strong>OpenAI acquires Orchestra Bio</strong></a> — The team joins Rosalind, OpenAI's life-sciences AI model, to help researchers plan experiments. Biotech is officially a serious vertical now.</li>
+  <li><a href="https://techcrunch.com/2026/10/20/google-has-joined-amazon-in-attacking-nvidias-stronghold-with-ai-app-developers/"><strong>Google joins Amazon in attacking Nvidia's developer moat</strong></a> — A new PyTorch migration tool makes it easier to run apps on Google's own silicon. Two major clouds in one week; Nvidia is watching.</li>
+  <li><a href="https://techcrunch.com/2026/10/20/chatgpt-now-lets-you-lock-your-chats/"><strong>ChatGPT adds chat locking</strong></a> — Hand your phone to a friend without exposing your therapy-adjacent AI conversations. Small feature, real relief.</li>
+  <li><a href="https://www.cnbc.com/2026/10/20/salesforce-braze-acquisition-deal.html"><strong>Salesforce buys Braze for $5.66B</strong></a> — BRZE surged 51%. Salesforce is bulking up its customer engagement stack as AI-driven marketing automation heats up.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/20/anthropic-pitches-ai-safety-bill-that-may-block-a-model-if-50-people-could-be-killed/"><strong>Anthropic proposes AI safety legislation</strong></a> — The bill would require a judge's sign-off before federal agencies can block a dangerous model's release. Critics say it's more protection for Anthropic than for the public.</li>
+  <li><a href="https://techcrunch.com/2026/10/20/hugging-face-ceo-warns-that-netflixs-openai-hack-documentary-isnt-accurate/"><strong>Hugging Face CEO calls out Netflix's OpenAI documentary</strong></a> — Clem Delangue, who appears in "AI Gone Rogue," says it went "full doomer mode." Worth knowing before you share it at dinner.</li>
+  <li><a href="https://www.theverge.com/tech/1014627/meta-muse-ai-sharing-ai-chats"><strong>Meta pauses Muse chat-sharing after privacy breach</strong></a> — Researchers found 6,800+ conversation URLs publicly discoverable via DNS. Feature is paused; trust is harder to pause.</li>
+  <li><a href="https://www.theverge.com/entertainment/1014284/spotify-ai-slop-spam-songs-removed"><strong>Spotify pulled 50 million AI-generated tracks</strong></a> — Over the past year, the platform quietly nuked spam songs from recommendations and updated its algorithm to surface more human-made music.</li>
+  <li><a href="https://techcrunch.com/2026/10/20/google-is-bringing-a-more-personal-version-of-its-gemini-ai-assistant-to-your-car/"><strong>Google brings personalised Gemini to your car</strong></a> — Android Auto will tap Gmail, Calendar, Maps, and YouTube to answer context-aware questions while you drive. Helpful or invasive, depending on your privacy comfort level.</li>
+  <li><a href="https://www.technologyreview.com/2026/10/20/1146937/the-new-economics-of-enterprise-ai/"><strong>MIT TR: Enterprise AI hits the "efficiency" phase</strong></a> — Early adopters asked "can we use it?" The question is now "how efficiently?" Cost discipline is replacing experimentation at scale.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><a href="https://www.cnbc.com/2026/10/20/stock-market-today-live-updates.html"><strong>Dow jumps 500+ points on earnings confidence</strong></a> — Broad optimism as results roll in better than feared. SpaceX shares surged on the merger news and blowout profits.</li>
+  <li><a href="https://www.cnbc.com/2026/10/20/netflix-nflx-earnings-q3-2026.html"><strong>Netflix beats Q3 but shares fall on ad guidance</strong></a> — Revenue outlook disappointed. The ad-supported tier is growing slower than Wall Street wanted.</li>
+  <li><a href="https://www.cnbc.com/investingclub/2026/10/20/capital-one-strong-quarter-and-progressing-discover-integration-are-rewarded.html"><strong>Capital One delivers strong quarter</strong></a> — Net interest income and credit quality both surprised to the upside. The Discover integration is on track.</li>
+  <li><a href="https://www.cnbc.com/2026/10/20/united-airlines-ual-3q-2026-earnings.html"><strong>United Airlines cuts 2026 outlook on fuel costs</strong></a> — Passengers keep booking despite higher fares, but rising fuel is eating into margin. Classic airline math.</li>
+  <li><a href="https://www.cnbc.com/2026/10/20/boeing-737-max-10-certification.html"><strong>Boeing's 737 Max 10 finally gets FAA approval</strong></a> — Six years late. The largest Max variant can now move toward commercial service.</li>
+  <li><a href="https://www.cnbc.com/2026/10/21/japan-trade-exports-semiconductor-yen.html"><strong>Japan's September exports badly miss forecasts</strong></a> — Growth slowed to 16.7% vs expectations, adding pressure to PM Takaichi's currency and rate policy.</li>
+  <li><a href="https://www.cnbc.com/2026/10/20/coreweave-debt-janus-henderson-lloyd.html"><strong>Janus Henderson sticks with CoreWeave debt</strong></a> — Portfolio manager John Lloyd calls it "best in class" data centre exposure. Conviction trade or brave face — you decide.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><a href="https://www.bbc.co.uk/news/articles/cq5ynkx3xy11o?at_medium=RSS&at_campaign=rss"><strong>Zelensky: US intelligence sharing "works now"</strong></a> — After talks with Trump's envoy in Oslo, Ukraine says the intelligence tap has been turned back on. Cautious optimism.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/ckrey51jrgnro?at_medium=RSS&at_campaign=rss"><strong>Trump and Zelensky still at loggerheads despite Oslo</strong></a> — One handshake doesn't resolve deep misgivings about US policy direction on Ukraine, analysts warn.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cr62ylj832vxo?at_medium=RSS&at_campaign=rss"><strong>Alberta votes decisively to stay in Canada</strong></a> — The result gives PM Carney political capital to focus on economic restructuring and a tougher US negotiating stance.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/c693z948px0jo?at_medium=RSS&at_campaign=rss"><strong>Ebola confirmed in nine Kenya cases</strong></a> — The US has issued a "reconsider travel" advisory. Kenyan authorities say the outbreak is contained; WHO is monitoring.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cqm2dzwdmmywo?at_medium=RSS&at_campaign=rss"><strong>Borneo fires choke Southeast Asia</strong></a> — Months of Indonesian wildfires have made hundreds of thousands of people ill across the region. The haze season is worsening.</li>
+  <li><a href="https://www.cnbc.com/2026/10/20/marine-le-pen-france-2027-election-odds-kalshi.html"><strong>Le Pen's 2027 odds rising as France protests grow</strong></a> — Prediction markets on Kalshi are pricing in greater Marine Le Pen probability amid ongoing unrest.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health</h3>
+<p>Congress is moving on knockoff obesity drugs. A <a href="https://www.statnews.com/2026/10/20/health-policy-news-bipartisan-group-of-lawmaker-urges-fda-to-close-peptide-loophole/">bipartisan group of lawmakers is urging the FDA to close a loophole</a> allowing imported compounded versions of retatrutide — Eli Lilly's investigational obesity peptide — to reach consumers before the drug has even been approved. The plain-language takeaway: if you are sourcing any GLP-1 adjacent peptide from grey-market suppliers, the regulatory window is closing fast, and the quality controls on knockoff versions are essentially unknown. <em>Not medical advice.</em></p>
+
+<h3>AI — Your Move Today</h3>
+<p>ChatGPT now lets you <strong>lock individual chats with a passcode or Face ID</strong>. Open the app, go to Settings → Privacy, and enable Chat Lock. Do it for any conversation you wouldn't want a borrowed phone to expose — it takes 90 seconds and removes a real-world risk you probably haven't thought about.</p>
+
+<h3>Investing — Where to Look</h3>
+<p>Two angles worth watching this week: <strong>defence-adjacent AI infrastructure</strong> (the Tesla-SpaceX merger committee story confirms Musk is consolidating hardware, energy, and compute under one roof — watch suppliers common to both) and <strong>non-data-centre AI beneficiaries</strong> like Capital One, which is using AI for credit underwriting with measurable results already in earnings. The risk: fuel-driven margin compression — visible in United Airlines today — can spread quickly to logistics and manufacturing names if oil holds elevated. <em>Not financial advice.</em></p>
+
+<hr>
+
+<p>That's your Tuesday. The Tesla-SpaceX merger story will dominate headlines for weeks — watch the independent committee timelines for the real signal. Back tomorrow.</p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
