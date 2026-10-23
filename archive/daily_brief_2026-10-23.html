@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-23</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Friday, October 23, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-23.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Friday, October 23, 2026</h1>
+
+<p>A big 24 hours: OpenAI is chasing a $1.25 trillion valuation, Microsoft says its AI can out-diagnose doctors, and the SpaceX-Tesla merger chatter got louder. Here's what you need to know before your first coffee cools down.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/"><strong>OpenAI eyes $30B raise at $1.25T valuation</strong></a> — UAE investors lead a round meant to bridge to a 2027 IPO. If it closes, OpenAI becomes the most valuable private company ever.</li>
+  <li><a href="https://techcrunch.com/2026/10/22/ben-lamm-raises-200m-for-warhound-to-engineer-war-dogs-and-arm-them-with-anduril-gear/"><strong>Warhound raises $200M to genetically engineer military dogs</strong></a> — Ben Lamm and Palmer Luckey emerge from stealth. The dogs will carry Anduril gear. Not a drill.</li>
+  <li><a href="https://techcrunch.com/2026/10/22/as-blockchain-investing-falls-out-of-vogue-a16z-crypto-rebrands-as-a16z-frontier/"><strong>a16z Crypto rebrands as a16z Frontier</strong></a> — Chris Dixon's unit broadens scope as blockchain investing loses its shine.</li>
+  <li><a href="https://techcrunch.com/2026/10/22/rivian-buys-world-model-startup-to-accelerate-self-driving-ambitions/"><strong>Rivian acquires world-model startup Third Dimension</strong></a> — The AI simulator tech could become the backbone of Rivian's self-driving stack.</li>
+  <li><a href="https://techcrunch.com/2026/10/22/mark-zuckerbergs-creative-plan-to-pay-californias-proposed-billionaire-tax-without-losing-control-of-meta/"><strong>Zuckerberg's new stock class doubles as a tax shield</strong></a> — The freshly minted share structure was partly engineered to let Zuckerberg pay California's potential billionaire tax without surrendering voting control of Meta.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1016690/suleyman-microsoft-diagnostic-orchestrator-science-medical-superintelligence"><strong>Microsoft AI tool diagnoses conditions 4× better than doctors, company claims</strong></a> — CEO Mustafa Suleyman says the moment has finally arrived. Independent validation is still pending — treat with healthy skepticism.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model"><strong>Canva launches Craft, its own image-gen model</strong></a> — A two-stage "plan then generate" architecture promises tighter control than rivals from OpenAI and Google. Canva now competes directly with its own partners.</li>
+  <li><a href="https://openai.com/index/decisions-api"><strong>OpenAI launches the Decisions API</strong></a> — Fast, low-cost, focused inference for in-app decision points. Aimed squarely at developers who find full chat completions overkill.</li>
+  <li><a href="https://www.theverge.com/tech/1017082/meta-terms-update-ai-training-concerns"><strong>Meta tweaks terms on news scraping — lawyers still not satisfied</strong></a> — The language change removed explicit permission to train on news sites, but legal experts say the loophole stays wide open.</li>
+  <li><a href="https://www.theverge.com/tech/1017066/meta-muse-sharing-back-on-artifiacts"><strong>Meta re-enables Muse sharing after privacy scare</strong></a> — Shared Muse links had exposed internal business documents. Meta says the issue is fixed; researchers remain cautious.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1016879/spacex-tesla-cursed-katamari"><strong>SpaceX and Tesla form merger discussion committees</strong></a> — Special committees are talking. SpaceX is already eyeing $40B in fresh Nvidia chip debt. Your enthusiasm may vary.</li>
+  <li><a href="https://www.theverge.com/policy/1016585/openai-anthropic-nvidia-lobbying-records"><strong>OpenAI, Anthropic, Nvidia all hit lobbying records in Q3</strong></a> — Nvidia led at $2.2M, Anthropic at $2.1M, OpenAI at $1.5M. Washington is officially an AI battleground.</li>
+  <li><a href="https://aws.amazon.com/blogs/machine-learning/amazon-polly-delivers-a-major-upgrade-to-its-generative-engine/"><strong>Amazon Polly gets a major voice upgrade</strong></a> — 14 new voices, 9 locales, lower latency. Hindi and Finnish now generally available. Drop-in, no code changes required.</li>
+  <li><a href="https://www.theverge.com/games/1016862/nintendo-switch-2-jailbreak-ai"><strong>Switch 2 jailbroken with help from OpenAI Codex</strong></a> — A modder used an old game exploit plus AI-generated code to crack Nintendo's new console. Cinnamoroll is now playable in Mario Kart.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><a href="https://www.cnbc.com/2026/10/23/japan-inflation-september-highest-in-2026.html"><strong>Japan core inflation hits 2.1% — highest of 2026</strong></a> — In line with forecasts, but keeps the Bank of Japan's rate-hike timeline firmly in play.</li>
+  <li><a href="https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html"><strong>OpenAI's $30B round: UAE leads, IPO bridge confirmed</strong></a> — CNBC sources say a 2027 IPO is the explicit goal. The round values OpenAI higher than Saudi Aramco's current market cap.</li>
+  <li><a href="https://www.cnbc.com/2026/10/22/moderna-stock-cancer-vaccine-data-leak.html"><strong>Moderna shares drop despite positive cancer vaccine data</strong></a> — The Moderna-Merck mRNA melanoma vaccine reduced recurrence risk by 42%, but a data leak before the official ESMO release spooked investors.</li>
+  <li><a href="https://www.cnbc.com/2026/10/22/etsy-bans-ai-generated-recipes-patterns-from-its-online-marketplace.html"><strong>Etsy bans AI-generated recipes and patterns</strong></a> — Sellers must now prove human involvement. A meaningful signal that "handmade" marketplaces are drawing a hard line.</li>
+  <li><a href="https://www.cnbc.com/2026/10/22/trump-defense-production-act.html"><strong>Trump invokes Cold War-era Defense Production Act for oil</strong></a> — Applies to production and refining. Energy markets watching closely ahead of winter.</li>
+  <li><a href="https://www.cnbc.com/2026/10/22/trump-musk-starlink-ukraine.html"><strong>Trump asked Musk to lift Starlink slowdown in Ukraine</strong></a> — WSJ reporting confirmed; Trump separately said access has been restored.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><a href="https://www.bbc.co.uk/news/articles/ck5ynd1z6e83o"><strong>Powerful earthquake kills 16 in Tibet</strong></a> — Hit a mountainous, sparsely populated area in north-eastern Tibet. Rescue operations under way.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cmy0ryjx7741o"><strong>Trump ordered to answer questions under oath in BBC lawsuit</strong></a> — The suit stems from a Panorama episode Trump says misrepresented a 2021 speech.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/c54g1kxw4nvvo"><strong>Sudan's RSF deliberately targeted hospitals, BBC finds</strong></a> — UN human rights chief says multiple attacks may constitute war crimes.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cj75p1xr7p7vo"><strong>Western diplomats describe Cold War-style surveillance in Moscow</strong></a> — Officials say paranoia and monitoring have reached levels unseen since the Soviet era.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/c6qjnwd1pgjxo"><strong>New York bans horse-drawn carriages after 160 years</strong></a> — The City Council voted to end a Central Park institution over safety and animal welfare concerns.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health</h3>
+<p><strong>The headline:</strong> The Moderna-Merck personalized mRNA cancer vaccine (intismeran) cut melanoma recurrence risk by <strong>42%</strong> versus standard treatment alone, per full data released at ESMO 2026.</p>
+<p><strong>Plain-language takeaway:</strong> The vaccine is tailored to each patient's tumor mutations and trains the immune system to hunt those specific cells. It's post-surgery, not a cure — but a 42% recurrence reduction is a meaningful step for a cancer that kills roughly 8,000 Americans a year.</p>
+<p><a href="https://www.statnews.com/2026/10/22/esmo-moderna-merck-cancer-vaccine-intismeran-data-released/">Read the STAT breakdown</a>. <em>Not medical advice.</em></p>
+
+<h3>AI — Your Move Today</h3>
+<p><strong>Try the OpenAI Decisions API.</strong> If you have a product or side project that currently sends a full chat-completion call just to pick between two options, swap it for the new <a href="https://openai.com/index/decisions-api">Decisions API</a>. It's cheaper, lower latency, and purpose-built for binary or categorical choices — think routing, moderation flags, or simple recommendations. Spend 20 minutes today reading the docs and benchmarking cost against your current setup.</p>
+
+<h3>Investing — Where to Look</h3>
+<p><strong>Watch:</strong> The mRNA oncology space just got a fresh catalyst. Moderna's melanoma data beat the bar; watch for read-across to other personalized vaccine programs and to Merck's companion checkpoint inhibitor franchise. Separately, OpenAI's $1.25T round — if it closes — will likely reprice expectations for the entire private AI infrastructure stack, including GPU suppliers and data-center REITs.</p>
+<p><strong>Risk to mind:</strong> Both plays carry significant binary event risk — regulatory decisions for mRNA cancer vaccines are still years out, and OpenAI's valuation assumes a successful 2027 IPO in a market that may look very different by then. <em>Not financial advice.</em></p>
+
+<hr>
+
+<p><em>That's your Friday brief. Stay curious, stay skeptical, and we'll see you Monday morning.</em></p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
