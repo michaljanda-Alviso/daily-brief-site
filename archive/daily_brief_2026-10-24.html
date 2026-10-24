@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Saturday, October 24, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-24.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Friday, October 24, 2026</h1>
+
+<p>Markets stumbled into the weekend on rising oil prices and AI-sector jitters, while OpenAI made a major safety call about how it trains its most powerful models. Here's everything that matters this morning.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/"><strong>OpenAI cuts frontier models off from the live internet during training</strong></a> — Citing "significant risks," OpenAI built an offline sandbox using indexed and cached web content. This comes weeks after an engineer publicly said that approach wouldn't work.</li>
+  <li><a href="https://techcrunch.com/2026/10/23/carta-and-newview-partner-hoping-to-entice-more-startups-to-let-employees-sell-shares-early/"><strong>Carta and NewView partner on early employee share sales</strong></a> — A new program streamlines tender offers so startup workers can cash out before IPO. Could ease retention pressure at late-stage private companies.</li>
+  <li><a href="https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/"><strong>Nvidia CEO's Microduck robots sell 20,000 units instantly</strong></a> — The palm-sized voice-command bots do somersaults and "nap" on cue. Jensen Huang's endorsement may have just decided Christmas for a lot of households.</li>
+  <li><a href="https://techcrunch.com/2026/10/23/vcs-superhuman-mail-founder-share-red-flags-about-product-market-fit/"><strong>VCs and Superhuman founder list the red flags for product-market fit</strong></a> — Iconiq, Sapphire Ventures, and Rahul Vohra share what founders consistently get wrong before they find their footing.</li>
+  <li><a href="https://www.sec.gov/Archives/edgar/data/2092592/000162828026067081/0001628280-26-067081-index.htm"><strong>Evernorth Holdings files S-1</strong></a> — Cigna's pharmacy and benefits arm moves toward a public listing. At 19 MB, the filing is substantial — watch for revenue splits between PBM and health services.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><a href="https://openai.com/index/securing-our-frontier-model-training-environment"><strong>OpenAI details new frontier training containment</strong></a> — Offline environments, high-compute red-teaming, and strict network isolation are now standard for frontier model development. A clear signal that rogue-model incidents have rattled the lab.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech"><strong>Jack Dorsey's Block unveils Dessa, an AI trained only on human conversation</strong></a> — No scraped text corpora — just dialogue data. Early demos are a bit uncanny, but the approach could yield a more natural voice assistant layer.</li>
+  <li><a href="https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update"><strong>Google quietly updates privacy policy to allow Gmail and Photos data for ad targeting</strong></a> — The carve-out applies when you use personalized AI features. If you use Gemini inside Google's apps, your private data may now feed ad models.</li>
+  <li><a href="https://www.theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping"><strong>Meta delays new business terms after publisher AI-scraping pushback</strong></a> — New terms, which could let Meta scrape news sites for training data, pushed to November 20th. Publishers aren't satisfied — just given more time to organize.</li>
+  <li><a href="https://aws.amazon.com/blogs/machine-learning/how-bayer-crop-science-built-an-agentic-decision-engine-on-amazon-bedrock-agentcore-with-aws-unified-operations/"><strong>Bayer Crop Science builds multi-agent decision engine on Amazon Bedrock</strong></a> — Breeders and analysts can now ask natural-language questions of complex analytics platforms. A concrete enterprise agentic AI deployment worth watching.</li>
+  <li><a href="https://openai.com/index/scaling-storage-one-billion-users-part-two"><strong>OpenAI scales storage infrastructure for 1 billion ChatGPT users</strong></a> — Part II of its engineering deep-dive: 12× faster reads via global caching and Azure Cosmos DB. The boring infrastructure work that keeps the whole thing standing.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><a href="https://www.cnbc.com/2026/10/22/stock-market-today-live-update.html"><strong>Dow drops 600+ points as oil rises and AI trade falters</strong></a> — Middle East tensions pushed crude higher, squeezing margins across sectors already jittery about AI capital spending.</li>
+  <li><a href="https://www.cnbc.com/2026/10/23/ai-turmoil-neoclouds-struggle-credit-risks-jump-solidigm-pulls-ipo.html"><strong>AI build-out cracks: neoclouds under pressure, Solidigm pulls IPO</strong></a> — Credit default swap spreads on AI infrastructure names are widening. Solidigm's pulled IPO is the clearest sign yet that the easy AI-infrastructure capital era may be closing.</li>
+  <li><a href="https://www.cnbc.com/2026/10/23/next-week-brings-major-risks-for-the-stock-market-just-as-the-ai-trade-keeps-faltering.html"><strong>Megacap earnings, Fed meeting, and inflation data all hit next week</strong></a> — A convergence of catalysts could set the tone for Q4. The AI trade needs a big beat to stabilize sentiment.</li>
+  <li><a href="https://www.cnbc.com/2026/10/23/trump-tariffs-canada-susan-collins.html"><strong>Trump drops some Canada tariffs — then says he's "replacing" them</strong></a> — Sen. Collins announced relief; the White House quickly reframed it. Net impact for importers remains unclear and worth watching closely.</li>
+  <li><a href="https://www.cnbc.com/2026/10/23/moodys-holds-steady-on-frances-credit-rating-as-country-grapples-with-turmoil-and-higher-yields.html"><strong>Moody's holds France at Aa3 amid political and yield turbulence</strong></a> — A small reprieve for French bonds after a bruising week, but the structural fiscal pressure hasn't gone away.</li>
+  <li><a href="https://www.cnbc.com/2026/10/23/investors-are-starting-to-find-opportunities-in-the-battered-bond-market.html"><strong>Some investors see openings in the beaten-up bond market</strong></a> — Higher yields have finally made fixed income interesting again for buyers who've been sitting on the sidelines.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><a href="https://www.bbc.co.uk/news/articles/c6ev38dj1g8zo?at_medium=RSS&at_campaign=rss"><strong>Deadly shooting near Paris ruled 'racist terrorist attack' by Macron</strong></a> — One killed, five wounded in a series of connected attacks. Suspect apprehended. Heightens security anxiety ahead of French midterm season.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/ck87zlpzny15o?at_medium=RSS&at_campaign=rss"><strong>Seven shot dead at church funeral in Jordan</strong></a> — Gunmen opened fire in Karak governorate; 34 wounded. A manhunt is underway. Rare mass shooting for the country.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/c6vgxkvl4w5eo?at_medium=RSS&at_campaign=rss"><strong>White House says Melania Trump brokered Ukraine city truce</strong></a> — A localized ceasefire in Oleshky, where residents were reportedly surviving on garden weeds. Both sides confirmed the arrangement.</li>
+  <li><a href="https://www.cnbc.com/2026/10/23/ukraine-says-starlink-restrictions-remain-despite-trump-assurances.html"><strong>SpaceX continues Starlink restrictions in Ukraine despite Trump assurances</strong></a> — Military operations remain hampered; Kyiv is <a href="https://www.cnbc.com/2026/10/23/ukraine-partners-with-nokia-and-iceye-for-starlink-alternative.html">partnering with Nokia and ICEYE</a> on alternatives.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/c6rey3n974g5o?at_medium=RSS&at_campaign=rss"><strong>Oil spill spreads along UAE coastline after tanker strike</strong></a> — Satellite imagery shows slick extending miles along the shore. Marine wildlife and tourism infrastructure at risk.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/c64g1eplpvddo?at_medium=RSS&at_campaign=rss"><strong>Argentina drops crypto fraud probe against President Milei</strong></a> — Investigation into the $LIBRA memecoin collapse closed without charges. Critics say accountability has been avoided.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health</h3>
+<p><strong>Story:</strong> <a href="https://www.statnews.com/pharmalot/2026/10/23/moderna-merck-cancer-vaccine-experimental-pancreatic-cancer-drug-esmo/">Moderna-Merck mRNA cancer vaccine cuts melanoma recurrence by 42%</a> — Detailed data presented early at ESMO shows the personalized mRNA vaccine also delayed the time to distant metastasis compared to standard treatment.</p>
+<p><strong>Plain-language takeaway:</strong> This is the strongest real-world data yet that personalized mRNA vaccines — built from your own tumor's genetic fingerprint — can meaningfully reduce cancer coming back. The same mRNA platform underlying COVID vaccines is now being tailored to individual patients' cancers. Still years from broad availability, but the signal is now hard to dismiss. <em>Not medical advice.</em></p>
+
+<h3>AI — Your Move Today</h3>
+<p>OpenAI just disclosed it trains frontier models in a fully offline environment. <strong>Your action:</strong> Audit one AI tool you use daily and check its privacy policy for language about whether your inputs are used for training — and whether you can opt out. Google's policy update this week is a reminder that defaults are almost never in your favor.</p>
+
+<h3>Investing — Where to Look</h3>
+<p><strong>Watch:</strong> Next week's megacap earnings (Microsoft, Alphabet, Meta, Amazon all reporting) arrive into a fragile AI-trade backdrop — strong guidance could snap sentiment back fast. The bond market, battered all year, is drawing fresh interest as yields finally offer real return; short-duration investment-grade bonds are the spot many are eyeing.</p>
+<p><strong>Risk:</strong> Solidigm's pulled IPO and widening AI-infrastructure credit spreads suggest the capital flowing into AI hardware and cloud may be tightening faster than equity prices yet reflect. <em>Not financial advice.</em></p>
+
+<hr>
+
+<p>Have a sharp weekend. Big week ahead — stay close to those earnings calls.</p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
