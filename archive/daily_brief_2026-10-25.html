@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-25</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Sunday, October 25, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-25.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Saturday, October 24, 2026</h1>
+
+<p>Midterms are days away, France is burning after dark, and AI is shaking up everything from nature documentaries to Wall Street portfolios. Here's what you need to know before the weekend kicks in.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/24/starlink-seems-to-be-working-normally-again-in-ukraine/">Starlink restored in Ukraine</a> — Service is back after Musk reportedly ordered throttling; SpaceX now claims Ukraine violated the terms of its agreement.</li>
+  <li><a href="https://techcrunch.com/2026/10/24/instacart-reportedly-discussed-selling-itself-with-doordash-and-uber/">Instacart held sale talks with DoorDash and Uber</a> — The grocery-delivery giant may be looking for an exit; no deal announced yet, but the conversations were serious.</li>
+  <li><a href="https://techcrunch.com/2026/10/24/these-clever-apps-show-off-the-iphone-duos-potential/">Developers get creative with the iPhone Duo</a> — From virtual cassette players to flight trackers, Apple's first foldable is starting to earn its form factor.</li>
+  <li><a href="https://techcrunch.com/2026/10/24/will-ai-expose-the-rickety-infrastructure-of-the-internet/">AI stress-testing the internet's aging plumbing</a> — Higher AI traffic loads are revealing just how fragile the web's underlying infrastructure really is.</li>
+  <li><a href="https://techcrunch.com/2026/10/24/php-ocalypse-how-two-critical-web-bugs-almost-broke-the-internet/">Two PHP bugs nearly broke the internet</a> — Critical flaws in the language powering most of the web were patched in time — this time.</li>
+  <li><a href="https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/">The AI graveyard keeps growing</a> — Apple's delayed Siri overhaul and OpenAI's messy super-app launch headline TechCrunch's updated list of AI projects that fell short.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/">Grok picks Republicans; GPT picks Democrats</a> — A new study of nearly 500 election races found the two models disagreed more than 90% of the time. Political AI bias is now a measurable, documented problem.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act">Pennsylvania mandates labels on AI-generated ads</a> — Governor Shapiro signed the Artificial Intelligence Deceptive Advertising Act; any AI-generated image, video, audio, or text in an ad must carry a disclosure.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai">Blue Planet III is deliberately leaving in imperfect shots</a> — The BBC is keeping rough, "un-AI" footage on purpose to prove authenticity. When polish becomes suspicious, rawness becomes a brand signal.</li>
+  <li><a href="https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/">Block's voice model runs locally on a MacBook M4 Max</a> — Jack Dorsey's company says the model sounds human enough to unsettle listeners — and it doesn't need the cloud to do it.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><a href="https://www.cnbc.com/2026/10/24/trump-audi-factory-georgia.html">Audi to build a U.S. factory in Georgia</a> — Trump set to announce the plant, expected to produce 200,000 SUVs annually. Big win for domestic manufacturing optics days before midterms.</li>
+  <li><a href="https://www.cnbc.com/investingclub/2026/10/24/ai-funding-fears-rattle-wall-street-heres-how-were-adjusting-our-portfolio/">AI funding fears rattle Wall Street</a> — Investors are rotating out of AI-heavy positions into defensives as credit concerns in the neoclouds sector spread.</li>
+  <li><a href="https://www.cnbc.com/2026/10/24/biotech-stocks-drug-innovation-rally.html">Biotech stocks are surging</a> — Clinical wins, M&amp;A activity, and new drug platforms are driving a sector revival; analysts highlight specific ETFs worth watching.</li>
+  <li><a href="https://www.cnbc.com/2026/10/24/iran-threats-us-embassies-middle-east.html">Iran threat warnings intensify ahead of midterms</a> — DNI director Jay Clayton says Iran is in "advanced stages" of planning attacks on Americans; embassies are tightening security.</li>
+  <li><a href="https://www.cnbc.com/2026/10/24/why-popular-airplanes-are-getting-scrapped-years-early/">Popular planes scrapped years ahead of schedule</a> — Engine and parts shortages are forcing airlines to cannibalize aircraft earlier than planned, squeezing capacity and pushing up fares.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><a href="https://www.bbc.co.uk/news/articles/c95ynd587ynzo">Almost 1,000 arrested as France protests turn violent</a> — Hundreds of thousands marched peacefully by day; after dark, clashes with riot police erupted across Paris and other cities.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cqd09k1k7532o">Israel demolishes Hebron homes ahead of election</a> — Palestinian families displaced following the killing of two Israeli soldiers; the move comes days before Israel's national vote.</li>
+  <li><a href="https://www.bbc.co.uk/news/videos/cm0e0del4jewo">Brazil heads to the polls Sunday</a> — Voters face a sharp ideological choice; the result will shape Latin America's largest economy for years.</li>
+  <li><a href="https://www.bbc.co.uk/news/videos/cq98z9xxy2n2o">Fire engulfs Hitler's Eagle's Nest in Bavaria</a> — A 33-year-old German man has been detained in connection with the blaze at the mountaintop retreat.</li>
+  <li><a href="https://www.cnbc.com/2026/10/24/obama-ohio-midterm-elections.html">Obama hits Ohio trail, targeting Ramaswamy</a> — The former president called out GOP gubernatorial candidate Vivek Ramaswamy over a campaign ad featuring a Democratic rival's estranged mother.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health</h3>
+<p><strong>GLP-1s and bone health — a new concern to track.</strong> A systematic review published this week in <em>Archives of Osteoporosis</em> examined the skeletal effects of GLP-1 receptor agonists in adults with overweight or obesity. The findings are mixed: while metabolic benefits are well-established, the evidence on bone density and fracture risk remains inconclusive and warrants longer-term study.</p>
+<p>Separately, a meta-analysis in the <em>European Journal of Clinical Pharmacology</em> found <a href="https://pubmed.ncbi.nlm.nih.gov/42920001/">GLP-1 agonists significantly reduce antipsychotic-related weight gain and metabolic disruption</a> — a potential new use case beyond obesity and diabetes.</p>
+<p><em>Not medical advice. Discuss any medication questions with your doctor.</em></p>
+
+<h3>AI — Your Move Today</h3>
+<p><strong>Test the political bias in your AI tools.</strong> Following today's study showing Grok and GPT lean in opposite partisan directions, pick one contested local race or ballot measure and ask your preferred AI assistant for a recommendation. Then ask a competing model the same question. Compare the framing. Knowing how your tools tilt makes you a sharper user — especially in an election week.</p>
+
+<h3>Investing — Where to Look</h3>
+<p><strong>Two directions worth watching:</strong></p>
+<ul>
+  <li><strong>Biotech ETFs</strong> — The ESMO oncology conference is generating clinical catalysts (see the Moderna/Merck data and the melanoma survival trial results). Sector momentum looks real, not just speculative.</li>
+  <li><strong>Domestic manufacturing plays</strong> — The Audi–Georgia announcement adds to a pattern of reshoring commitments. Industrial and supplier-chain names tied to U.S. auto production could see renewed interest.</li>
+</ul>
+<p><em>Risk note: AI funding uncertainty is actively repricing tech-adjacent names; volatility is elevated going into midterm results. Not financial advice.</em></p>
+
+<hr>
+
+<p>Enjoy your Saturday — Brazil votes tomorrow, France watches its streets, and the U.S. midterms are days away. Stay sharp.</p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
