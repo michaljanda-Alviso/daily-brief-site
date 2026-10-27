@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Tuesday, October 27, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-27.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Tuesday, October 27, 2026</h1>
+
+<p>A blockbuster morning: Anthropic's IPO filing is shaking both Wall Street and Silicon Valley, while Microsoft quietly hands 60,000 employees an exit door. Here's everything you need before your first coffee.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><strong><a href="https://techcrunch.com/2026/10/26/microsoft-offers-buyouts-to-around-60000-employees-reports-say/">Microsoft offers buyouts to 60,000 employees</a></strong> — The company is pushing AI-driven efficiency hard; voluntary exits span the US, UK, Canada, and India. Notably, no forced layoffs — yet.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/26/watch-out-youtube-instagram-goes-from-short-form-to-90-minute-videos/">Instagram extends video limit to 90 minutes</a></strong> — Meta is going long-form, taking direct aim at YouTube's turf. The short-video era may be peaking.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/26/uh-oh-it-sounds-like-the-iphone-duo-keeps-cracking-and-users-arent-happy-about-it/">iPhone Duo screens are cracking for early adopters</a></strong> — Apple's new foldable flagship has a durability problem. Small sample so far, but the complaints are spreading fast online.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/26/this-startups-self-driving-excavators-help-dig-up-600m-in-new-funding/">Bedrock Robotics raises $600M for self-driving excavators</a></strong> — Now valued at $4.1B, the startup is betting that a skilled-operator shortage makes autonomous diggers an easy sell to construction firms.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/">SpaceX locks in $40B GPU financing deal with Apollo</a></strong> — A massive non-traditional debt move that funds SpaceX's AI ambitions without tapping bond markets.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/26/fusion-startups-are-giving-the-government-shares-in-exchange-for-awards-is-it-worth-it/">Fusion startups debate giving government equity for funding</a></strong> — A new policy wrinkle: take federal awards and hand over shares, or bootstrap alone? Early-stage founders are split.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1018476/anthropic-ipo-details-s1-filed-sec">Anthropic files S-1 — plans Nasdaq listing as "ANT"</a></strong> — The 335-page prospectus lays out ambitions to "revolutionize every area of human endeavor." More than half of its $100K-plus customers now use both Claude Platform and a first-party app — a sticky cross-sell strategy.</li>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk">Anthropic's S-1 flags growing reliance on natural gas</a></strong> — Data centers running Claude are increasingly dependent on fossil fuels. The filing openly names it a climate risk — a rare level of candour for a tech IPO.</li>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics">OpenAI announces three major science breakthroughs</a></strong> — New discoveries in math, computer science, and physics — this time with external academic "shepherds" to validate results. A shift toward credibility-building.</li>
+  <li><strong><a href="https://www.technologyreview.com/2026/10/26/1147645/the-focus-on-ai-safety-disasters-ignores-everyday-harms/">MIT Tech Review: AI safety focus misses everyday harms</a></strong> — A sharp critique arguing that obsessing over sci-fi catastrophe scenarios lets companies off the hook for quieter, ongoing damage to users.</li>
+  <li><strong><a href="https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal">The RealReal blocks AI agents from hoarding luxury goods</a></strong> — After reports that bots were gaming its reservation system, the resale platform is hardening its defences against agentic shoppers.</li>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1018434/cobol-migration-legacy-code-openai-anthropic">Can AI finally fix the COBOL crisis?</a></strong> — Banks, airlines, and the IRS run on 60-year-old code. OpenAI and Anthropic are both pitching AI as the solution — but skeptics abound.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><strong><a href="https://www.cnbc.com/2026/10/26/anthropic-ipo-might-trigger-tech-reset-if-ipo-underperforms.html">Anthropic IPO carries outsized "trickle-down" weight</a></strong> — With the AI trade under pressure and rates elevated, a weak debut could rattle the broader tech rally; a strong one could reignite it.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/26/stock-market-today-live-updates.html">Wall Street started the week with solid gains</a></strong> — Anthropic's filing gave tech stocks a tailwind Monday; futures are little changed overnight as earnings season heats up.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/27/boj-october-meeting-rate-cnbc-survey.html">Bank of Japan expected to hold but signal December hike</a></strong> — Every respondent in CNBC's survey expects the BOJ to stay put this week, yet telegraph a move as wages and inflation keep rising.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/26/james-comey-indictment-national-defense-doj-trump.html">DOJ charges former FBI Director James Comey</a></strong> — A new case from a Justice Department that critics say is being weaponised by the Trump administration. Markets watching for rule-of-law signals.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/26/jetblue-jblu-3q-2026-earnings.html">JetBlue posts bigger loss but CEO flags improving margins</a></strong> — Fuel costs are the villain; management says its cost-cut and premium-revenue plan is working, just slowly.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/27/arctic-shipping-china-and-russia-expand-grip-can-europe-fight-back.html">China and Russia tighten grip on Arctic trade routes</a></strong> — As Arctic ice recedes, Beijing and Moscow are positioning for control of the Northern Sea Route — a slow-burn geopolitical story with real shipping implications.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/ckm23y3mg1yyo">Lula wins fourth term in Brazil runoff</a></strong> — The left-wing incumbent came from behind to beat Flávio Bolsonaro in a polarising vote. A significant shift for Latin America's largest economy.</li>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/cm4g175dgdx2o">More than 60 Christians killed in Ethiopia massacre</a></strong> — A church official described an organised ambush. The attack adds to a growing pattern of targeted religious violence in the country's regions.</li>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/cm4g14n1e5wko">Algeria sends troops to Niger for first time since 1973</a></strong> — Protecting energy infrastructure near the Libyan border, a move that underscores deepening instability across the Sahel.</li>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/crlykey9jywqo">Israel and US elections: Global consequences loom</a></strong> — Two ballots, two continents, one fortnight. The outcomes will shape trade, conflict, and alliances for years.</li>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/cmy4xwp22xyqo">"Maxxing" named Dictionary.com word of the year</a></strong> — Short for maximising, it captures the cultural obsession with optimising everything from looks to productivity. Make of that what you will.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health</h3>
+<p>Fresh from ESMO 2026: <strong><a href="https://www.statnews.com/2026/10/26/merck-kelun-sac-tmt-endometrial-cancer-study-esmo-2026/">Merck's antibody-drug conjugate cut death risk by one-third in advanced endometrial cancer</a></strong> in a Phase 3 trial. ADCs — which pair a targeted antibody with a chemotherapy payload — are increasingly the dominant approach in oncology, essentially acting like precision-guided missiles at the tumour level. The Merck/Kelun result is one of the strongest survival signals in this cancer type in years. <em>Not medical advice; speak with a specialist about treatment options.</em></p>
+<p>Also worth noting: <strong><a href="https://www.statnews.com/2026/10/26/heart-health-women-four-life-stages-qa-sadiya-khan/">A new four-stage framework for women's heart health</a></strong> has been published — a practical guide for patients and doctors to track cardiovascular risk across adolescence, pregnancy, midlife, and older age.</p>
+
+<h3>AI — Your Move Today</h3>
+<p>With Anthropic's S-1 now public, <strong>read the actual risk section</strong> — all ~100 pages are filed on the SEC website. It's the most candid document any frontier AI lab has ever been legally required to produce. Search for "natural gas," "competition," and "catastrophic risk" to get the unfiltered picture in under 20 minutes. Understanding the risks the company itself admits is the sharpest free education in AI right now.</p>
+
+<h3>Investing — Where to Look</h3>
+<p><strong>Watch the Anthropic IPO roadshow closely this week.</strong> If "ANT" prices above its indicated range, expect a relief rally in AI-adjacent names — cloud infrastructure, GPU plays, and enterprise software. If it stumbles, brace for renewed pressure on the broader AI trade just as mega-cap earnings (Alphabet, Microsoft, Amazon) hit the tape.</p>
+<p><strong>Also watch:</strong> BOJ language on Wednesday — any hawkish pivot accelerates yen strength and pressures carry trades that have quietly underpinned risk assets all year. <em>Not financial advice; past performance does not guarantee future results.</em></p>
+
+<hr>
+
+<p>That's your Tuesday. Stay sharp — it's a week where a single filing or a single central bank sentence could move markets more than the headlines suggest.</p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
