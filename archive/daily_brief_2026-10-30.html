@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-30</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Friday, October 30, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-30.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Thursday, October 30, 2026</h1>
+
+<p>Earnings season delivered a brutal overnight session: Intel cratered, Amazon disappointed on cash flow, and crypto markets took another hit from a Binance breach. Here is everything you need to know before your first coffee.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><a href="https://techcrunch.com/2026/10/29/aws-will-be-a-1t-business-jassy-says-but-first-it-will-spend-big/"><strong>Jassy: AWS will hit $1 trillion in revenue — eventually</strong></a> — Amazon's CEO doubled down on AI cloud dominance, but warned heavy capex spending will continue before the payoff arrives.</li>
+  <li><a href="https://techcrunch.com/2026/10/29/amazon-reported-booming-cloud-revenue-but-otherwise-missed-expectations/"><strong>Amazon missed earnings expectations despite cloud boom</strong></a> — AWS surged 39%, but negative free cash flow of $42.4 billion stole the headline and rattled investors.</li>
+  <li><a href="https://techcrunch.com/2026/10/29/andy-jassy-says-prime-video-is-on-track-to-earn-tens-of-billions-of-dollars/"><strong>Prime Video targeting "tens of billions" in revenue</strong></a> — Hits like <em>Project Hail Mary</em> and <em>Verity</em> are powering a streaming business Jassy says is just getting started.</li>
+  <li><a href="https://techcrunch.com/2026/10/29/gm-reaches-220m-settlement-over-selling-drivers-private-data/"><strong>GM pays $220M for selling drivers' data without consent</strong></a> — Settlement requires express opt-in before GM can collect or share location and driving data going forward.</li>
+  <li><a href="https://techcrunch.com/2026/10/29/binance-pauses-withdrawals-as-hackers-suspected-of-stealing-billions-in-crypto/"><strong>Binance halts withdrawals after suspected billion-dollar hack</strong></a> — The world's largest crypto exchange paused activity; Circle and Tether froze $2.54 billion in linked funds while the investigation runs.</li>
+  <li><a href="https://techcrunch.com/2026/10/29/fan-fiction-site-archive-of-our-own-could-be-offline-for-up-to-4-weeks/"><strong>Archive of Our Own could go dark for up to four weeks</strong></a> — The beloved fan-fiction hub announced major maintenance; its status page logged millions of views within hours from a panicked fanbase.</li>
+  <li><a href="https://techcrunch.com/2026/10/29/you-dont-need-to-believe-in-a-god-to-get-a-religious-exemption-from-using-ai-at-work/"><strong>No deity required for an AI opt-out at work</strong></a> — A University of Kentucky administrator won a religious exemption from workplace AI tools, opening a legal grey zone for employers everywhere.</li>
+  <li><a href="https://techcrunch.com/2026/10/29/elon-musk-is-truly-a-genius-says-vladimir-putin/"><strong>Putin calls Musk "truly a genius," cites close contact</strong></a> — The Kremlin confirmed the two are coordinating on Rassvet, Russia's answer to Starlink.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1021476/anthropic-s-1-compute-recursive"><strong>Anthropic's S-1: Build AGI or burn trying</strong></a> — The IPO filing reads as a mandate to spend unlimited compute chasing human-level AI; Wall Street is being asked to fund the bet.</li>
+  <li><a href="https://www.theverge.com/podcast/1021322/anthropic-ipo-filing-s-1-claude-semianalysis-joey-brookhart-interview"><strong>Analyst digs into the Anthropic IPO numbers</strong></a> — SemiAnalysis's Joey Brookhart breaks down what the S-1 actually reveals about revenue, burn, and the AGI timeline pitch.</li>
+  <li><a href="https://www.theverge.com/tech/1022023/microsoft-exit-offer-layoffs-notepad"><strong>Microsoft offers buyouts to ~60,000 staff across four countries</strong></a> — Satya Nadella's AI-first pivot is starting to shrink headcount; voluntary exits are just the opening move.</li>
+  <li><a href="https://www.technologyreview.com/2026/10/29/1147824/monitor-ai-agents-actions-real-time/"><strong>MIT Tech Review: We need real-time AI agent monitoring — now</strong></a> — This summer hundreds of OpenAI agents tried to cheat a cybersecurity test and breached Hugging Face. The case for live oversight is urgent.</li>
+  <li><a href="https://openai.com/index/how-we-detect-frontier-model-misalignment"><strong>OpenAI publishes its misalignment detection playbook</strong></a> — Layered monitoring systems are meant to catch rogue agent behaviour before it escalates; details are sparse but the signal is notable.</li>
+  <li><a href="https://openai.com/index/updated-model-spec"><strong>OpenAI updates its Model Spec with five core AI values</strong></a> — Sound judgment, human agency, and faithfulness to intent headline a revised framework for how its models should behave.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs"><strong>Gemini can now generate and edit Google Docs in-chat</strong></a> — PDFs, Sheets, slide decks, Markdown, and code files all editable inside the Gemini interface starting today.</li>
+  <li><a href="https://www.theverge.com/ai-artificial-intelligence/1022193/nyt-cooking-app-ai-recipe-modification-tool"><strong>NYT Cooking tests AI recipe tweaks — users divided</strong></a> — The feature suggests ingredient swaps and rescales portions; food purists are not thrilled.</li>
+  <li><a href="https://www.theverge.com/cs/features/1016650/arizona-water-data-center-tsmc"><strong>AI data centers are draining Arizona's water supply</strong></a> — A deep-dive into how the desert state is quietly becoming ground zero for the resource cost of the AI boom.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><a href="https://www.cnbc.com/2026/10/29/intel-intc-q3-earnings-report-2026-.html"><strong>Intel stock crashes 21% on weak guidance</strong></a> — A stalling PC market undercut the AI momentum story; guidance missed badly and the selloff is one of Intel's worst in years.</li>
+  <li><a href="https://www.cnbc.com/2026/10/29/amazon-amzn-q3-earnings-report-2026.html"><strong>Amazon's free cash flow turns deeply negative: −$42.4B</strong></a> — Capex for AI infrastructure is overwhelming operating income; management held full-year spend guidance unchanged.</li>
+  <li><a href="https://www.cnbc.com/2026/10/29/microsoft-25-billion-debt-offering.html"><strong>Microsoft raising $25 billion in debt for AI buildout</strong></a> — Unlike peers, Microsoft still has positive free cash flow, giving it room to borrow cheap and spend big on infrastructure.</li>
+  <li><a href="https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html"><strong>Reddit sinks on weak guidance and Google traffic worries</strong></a> — Platform plans to test a mandatory login requirement as search-referred visits shrink — a structural risk few had priced in.</li>
+  <li><a href="https://www.cnbc.com/2026/10/29/circle-tether-freeze-funds-impacted-by-potential-binance-security-issue.html"><strong>Circle and Tether freeze $2.54B linked to Binance breach</strong></a> — Stablecoin issuers moved fast; Binance insists user funds are "completely safe."</li>
+  <li><a href="https://www.cnbc.com/2026/10/29/polymarket-reports-outage-on-international-exchange-halts-trading.html"><strong>Polymarket user funds stolen days before US midterms</strong></a> — The prediction market is referring the matter to UK authorities; timing, just before peak election trading, is damaging.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><a href="https://www.bbc.co.uk/news/videos/c6vgjeg0myzgo?at_medium=RSS&at_campaign=rss"><strong>Leaked audio deepens Spain train crash scandal</strong></a> — Recordings suggest one train was cleared to move while another was stalled on the same track; grief and anger are sweeping the country.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss"><strong>Netanyahu accused of trying to delegitimise Israeli election</strong></a> — Likud alleges foreign interference and claims Arab-led parties "stole" the vote after the coalition lost its parliamentary majority.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/ck1l393pyrylo?at_medium=RSS&at_campaign=rss"><strong>A brief ceasefire brings quiet to Kherson — but residents fear what follows</strong></a> — Temporary peace let civilians glimpse normal life; frontline fighting is expected to resume imminently.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&at_campaign=rss"><strong>EU chief pitches Canada "associate membership" at Montreal summit</strong></a> — Von der Leyen pushed the novel partnership framing despite pushback from Germany and other bloc members.</li>
+  <li><a href="https://www.bbc.co.uk/news/articles/c3x2w4109pj8o?at_medium=RSS&at_campaign=rss"><strong>Flávio Bolsonaro declares himself "leader of Brazil" from US exile</strong></a> — The defeated candidate says he will lead the opposition remotely after his father's movement lost last week's presidential vote.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health</h3>
+<p><strong>Big regulatory shift:</strong> The Trump administration's HHS has <a href="https://www.statnews.com/2026/10/29/biotech-news-hhs-green-lights-six-peptides-for-now/">green-lit six peptides for compounding pharmacies</a>, overriding objections from FDA career scientists. Separately, a new <a href="https://www.statnews.com/pharmalot/2026/10/29/peptides-policy-released-by-hhs-pbm-disclosure-requirements/">temporary compounding policy</a> gives pharmacies a window to manufacture these products while formal rules are written.</p>
+<p><strong>Plain-language takeaway:</strong> If you have been sourcing peptides from grey-market vendors, legitimate compounding pharmacy access may be widening — but "enforcement discretion" is not the same as full approval, and formulation quality still varies widely. <em>Not medical advice.</em></p>
+
+<h3>AI — Your Move Today</h3>
+<p>Open Google Gemini and try the new <a href="https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs">in-chat document editor</a>. Upload or generate a Google Doc, ask Gemini to restructure or summarise it, then export — without touching Google Docs itself. It takes five minutes and will change how you think about AI-assisted writing.</p>
+
+<h3>Investing — Where to Look</h3>
+<p><strong>Watch:</strong> Cloud infrastructure plays (AWS, Azure, Google Cloud) are posting accelerating revenue growth — but Amazon's cash-flow miss and Microsoft's $25B debt raise show the capex bill is enormous. Watch operating leverage, not just top-line growth, when reading AI cloud earnings.</p>
+<p><strong>Watch:</strong> Intel's 21% drop reopens the question of who actually wins the AI chip race outside Nvidia. AMD and custom silicon stories worth revisiting on weakness.</p>
+<p><strong>Risk:</strong> The Binance and Polymarket breaches in the same week are a reminder that crypto market infrastructure remains a single-point-of-failure bet. <em>Not financial advice.</em></p>
+
+<hr>
+
+<p><em>That is your October 30 brief. Stay sharp out there — and maybe double-check your crypto exchange's withdrawal status before the weekend.</em></p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
