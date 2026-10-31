@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <title>Daily Brief — 2026-10-31</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b1c2c;
+      --ink-soft: #2a3a4a;
+      --muted: #5c6b7a;
+      --rule: #c8d0d8;
+      --accent: #b11226;
+      --link: #0a4f8c;
+      --paper: #f3f5f8;
+      --paper-2: #e8edf2;
+      --surface: #ffffff;
+      --brand: #0b1c2c;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 50% -10%, #dfe8f2 0%, transparent 55%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 18px 72px;
+    }
+
+    /* —— Masthead (Axios / FT morning brief) —— */
+    .masthead {
+      padding: 28px 0 20px;
+      border-bottom: 3px solid var(--brand);
+      margin-bottom: 0;
+    }
+
+    .masthead .brand {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--brand);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .masthead .brand:hover { color: var(--accent); }
+
+    .masthead .rail {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .masthead .rail .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .masthead .dek {
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 36rem;
+    }
+
+    /* —— Toolbar —— */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      padding: 12px 0 18px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .toolbar a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .toolbar a:hover { text-decoration: underline; }
+
+    /* —— Article —— */
+    article {
+      padding-top: 8px;
+    }
+
+    article > h1:first-child {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 4.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+      color: var(--ink);
+    }
+
+    article > h1:first-child + p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    article h3 {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    article p {
+      margin: 0 0 1em;
+      color: var(--ink-soft);
+    }
+
+    article ul {
+      list-style: none;
+      margin: 0 0 1.25em;
+      padding: 0;
+    }
+
+    article li {
+      position: relative;
+      padding: 0 0 1em 0;
+      margin: 0 0 1em;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    article li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    article li strong {
+      font-family: var(--sans);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    article a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    article a:hover { color: var(--accent); }
+
+    article hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
+
+    article em {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin: 12px 0 24px;
+    }
+
+    .meta a { color: var(--link); }
+
+    /* —— Archive —— */
+    .archive {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--brand);
+    }
+
+    .archive h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+      padding: 0;
+      border: none;
+    }
+
+    .archive ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      gap: 24px;
+    }
+
+    .archive li {
+      margin: 0;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    .archive a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .archive a:hover { color: var(--link); }
+
+    footer.site-foot {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .archive ul { columns: 1; }
+      article li { padding-bottom: 0.9em; margin-bottom: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="../">Daily Brief</a>
+      <div class="rail">
+        <span>Saturday, October 31, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Morning edition</span>
+      </div>
+      
+    </header>
+    <nav class="toolbar" aria-label="Edition links"><a href="daily_brief_2026-10-31.txt">Audio script (.txt)</a><a href="../">Latest brief</a></nav>
+    <article>
+
+<h1>Daily Brief — Halloween 2026 🎃</h1>
+
+<p>It's October 31 and the tech world has its own horrors to hand out: Intel's worst stock day since the 1970s, Anthropic heading toward a junk credit rating, and the AI spending boom showing its first real cracks. Buckle up.</p>
+
+<hr>
+
+<h2>The News</h2>
+
+<h3>Tech &amp; Deals</h3>
+<ul>
+  <li><strong><a href="https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/">Cracks emerge in the AI spending boom</a></strong> — Mounting debt, negative cash flow, and rising investor skepticism are turning the AI infrastructure party into a reckoning.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/">Nvidia may cosign Nscale's West Virginia data center loan</a></strong> — The chipmaker is reportedly willing to backstop a financing deal, a sign that even its biggest customers need help convincing lenders.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/30/salesforces-ma-spree-continues-with-a-reported-375m-deal-for-defense-tech-startup-rune/">Salesforce buys defense-tech startup Rune for ~$375M</a></strong> — The AI logistics firm folds into Salesforce's Missionforce platform; the acquisition spree rolls on.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/">Intel posts worst stock day since the 1970s</a></strong> — AI infrastructure demand is cannibalising memory and components, pushing PC prices up and Intel's share price down — wiping $12B off the government's stake.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/30/applebees-exposed-customers-personal-data-after-leaving-database-password-in-app/">Applebee's left a database password hardcoded in its app</a></strong> — A security researcher found unrestricted access to customer personal data. Classic.</li>
+  <li><strong><a href="https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/">Ollie, the privacy-first AI assistant, is shutting down</a></strong> — Another casualty of the crowded AI assistant market — gone in a week.</li>
+</ul>
+
+<h3>Artificial Intelligence</h3>
+<ul>
+  <li><strong><a href="https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission">Google's AI satellite sends its first response from space</a></strong> — Project Suncatcher's TPU-equipped satellite booted up, ran Gemma 4, and beamed a haiku back to Earth. Edge computing just got very high.</li>
+  <li><strong><a href="https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3">Apple Intelligence is finally coming to China with iOS 27.3</a></strong> — Beta lands November 4; full release in December. A major market unlocked after months of regulatory delay.</li>
+  <li><strong><a href="https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out">OpenAI, Google, Microsoft, Anthropic back unified scraping opt-out standard</a></strong> — Publishers can set a single "policy token" signal instead of blocking each AI firm individually. A meaningful shift for the open web.</li>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1023188/pope-leo-disarm-ai">Pope Leo calls for AI disarmament</a></strong> — "Machines are tools, not persons." The Vatican urges UN states to ban lethal autonomous weapons at next month's Geneva meeting.</li>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers">Altman: RAM belongs in data centers, not on your desk</a></strong> — In a podcast appearance, the OpenAI CEO said personal PC memory is wasteful. Expect the quote to be unpopular with literally everyone who owns a laptop.</li>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1023054/altman-cheeky-pint-ai-math-interview">Altman sympathises with mathematicians — but won't stop the AI math flood</a></strong> — OpenAI's torrent of AI-generated results is overwhelming researchers, and Altman hints there's more in the pipeline.</li>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1022880/wikipedia-openai-new-york-times-copyright">Wikimedia warns a blunt AI copyright ruling could break the open web</a></strong> — The foundation wants courts to allow LLM training on open content while still protecting against chatbot regurgitation.</li>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru">Starbucks wants to serve you a personalised AI menu at the drive-thru</a></strong> — CEO Brian Niccol outlined plans for cameras that recognise loyalty members and show tailored menus before you even roll the window down.</li>
+</ul>
+
+<h3>Markets</h3>
+<ul>
+  <li><strong><a href="https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/">Anthropic faces a high-junk credit rating post-IPO</a></strong> — Blackstone's forecast suggests the AI darling will pay a premium to borrow money, complicating its already eye-watering spend requirements.</li>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1023070/anthropic-ipo-risk-factors-filing-miracles">Silicon Valley asks you to invest in "miracles"</a></strong> — Anthropic's own IPO risk factors range from "existential catastrophe" to "age of miracles." Not your typical prospectus language.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/30/meta-outlook-to-revised-to-negative-by-sp-after-cash-flow-negative.html">S&amp;P revises Meta's outlook to negative</a></strong> — Massive capex and shrinking free cash flow spooked the ratings agency; Meta's AI bet is getting expensive fast.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/30/musalem-fed-monetary-policy-tightening.html">Fed officials signal rate hikes may return</a></strong> — Presidents Musalem and Logan both floated the idea of tightening again — the first concrete hints of a policy pivot back toward higher rates.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/30/stock-market-next-week-outlook-for-nov-2-6-2026.html">Big week ahead: Apple earnings, midterms, jobs report</a></strong> — Three market-moving events land in the same five-day window just as investors are already selling tech.</li>
+  <li><strong><a href="https://www.cnbc.com/2026/10/30/gamble-on-democracy-inside-suspicious-election-contracts-trading-on-prediction-markets-.html">Suspicious trading spikes in election prediction markets</a></strong> — CNBC documents how small trades can move low-volume political contracts dramatically — raising integrity questions days before polls close.</li>
+</ul>
+
+<h3>World</h3>
+<ul>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/crz9824d5e88o">Poland deploys police in Supreme Court stand-off</a></strong> — The government suspended two senior justices and moved to charge them; the constitutional crisis is escalating fast.</li>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/c3vgxznlx7jzo">US approves sale of 500 Patriot missiles to Ukraine</a></strong> — Washington greenlights its only weapon effective against Russian ballistic missiles, a significant escalation in support.</li>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/cmd6dp2y576do">G20 'family photo' cancelled over Russia protest</a></strong> — UK Foreign Secretary Miliband confronted Russia's minister over civilian deaths; the group photo was scrapped as a result.</li>
+  <li><strong><a href="https://www.bbc.co.uk/news/articles/cmjwepvd0qq9o">Thailand sentences man to 34 years for royal criticism while dressed as Harry Potter</a></strong> — One of 294 prosecutions since 2020 under the country's lèse majesté law; sentences reach 50 years.</li>
+  <li><strong><a href="https://www.theverge.com/ai-artificial-intelligence/1021080/maine-senate-race-susan-collins-ai-data-centers">AI data centers are now a Senate-deciding issue in Maine</a></strong> — Water use, climate concerns, and a heckler at a debate: the battle over data center expansion could flip the chamber.</li>
+</ul>
+
+<hr>
+
+<h2>For You</h2>
+
+<h3>Peptides &amp; Health</h3>
+<p>A fresh <a href="https://pubmed.ncbi.nlm.nih.gov/42960716/">systematic review in <em>Gynecological Endocrinology</em></a> finds that GLP-1 receptor agonists significantly improve metabolic markers, reduce androgen levels, and restore menstrual regularity in hyperandrogenic, insulin-resistant women — the population that includes many with PCOS. The authors note the evidence is promising but call for larger randomised trials before widespread clinical adoption.</p>
+<p><em>Plain takeaway:</em> GLP-1 drugs may do more than control weight — they appear to address root hormonal dysfunction in a hard-to-treat group. Watch this space. <strong>Not medical advice.</strong></p>
+
+<h3>AI — Your Move Today</h3>
+<p>The new <strong>unified AI scraping opt-out standard</strong> is live. If you run a website or blog, visit <a href="https://openai.com/index/helping-websites-express-ai-training-preferences">OpenAI's guidance page</a> today and check whether your <code>robots.txt</code> already reflects your training preferences — one file now signals to OpenAI, Google, Microsoft, and Anthropic simultaneously. Five minutes, done.</p>
+
+<h3>Investing — Where to Look</h3>
+<p>Two directions worth watching this coming week:</p>
+<ul>
+  <li><strong>Consumer staples rotation</strong> — With tech selling off and the AI trade wobbling, defensive consumer names are getting fresh attention. <a href="https://www.cnbc.com/2026/10/30/jim-cramer-consumer-staples-stocks.html">Cramer flagged four names</a> as a starting point for research.</li>
+  <li><strong>Apple earnings on deck</strong> — iPhone and services numbers will be the clearest read yet on whether consumer spending is holding. A miss could extend the tech selloff significantly.</li>
+</ul>
+<p><em>Risk: Fed rate-hike signals plus midterm uncertainty make this an unusually volatile week. Size positions accordingly. <strong>Not financial advice.</strong></em></p>
+
+<hr>
+
+<p>Happy Halloween — whether you're dressing as a PHP vulnerability or a sleep-deprived Bryan Johnson, stay sharp out there. Back tomorrow with the post-midterm fallout.</p>
+
+</article>
+    <footer class="site-foot">Published overnight · Open on any phone — no app needed.</footer>
+  </div>
+</body>
+</html>
